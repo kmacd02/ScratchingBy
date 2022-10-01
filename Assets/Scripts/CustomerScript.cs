@@ -5,7 +5,7 @@ using UnityEngine;
 public class CustomerScript : MonoBehaviour
 {
     // private variables
-    float timer = 10f;
+    float timer = 20f;
     [SerializeField] string order;
 
     // get functions
@@ -19,6 +19,12 @@ public class CustomerScript : MonoBehaviour
     public string getOrder()
     {
         return order;
+    }
+
+    // set functions
+    public void setOrder(string o)
+    {
+        order = o;
     }
 
     // Start is called before the first frame update
