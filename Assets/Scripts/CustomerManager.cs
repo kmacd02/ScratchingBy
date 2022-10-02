@@ -13,14 +13,6 @@ public class CustomerManager : MonoBehaviour
     [SerializeField] private GameObject customerPrefab;
     private List<GameObject> currentCustomers = new();
     private int currentCustomersInQueue = 0;
-    private int addCustomerInProgress = 0;
-
-    public bool isAddingCustomer()
-    {
-        if (addCustomerInProgress != 0)
-            return true;
-        return false;
-    }
 
     // Start is called before the first frame update
     void Start()
