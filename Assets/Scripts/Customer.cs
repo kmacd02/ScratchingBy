@@ -1,26 +1,29 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class CustomerScript : MonoBehaviour
+public class Customer : MonoBehaviour
 {
     // Constructors
-    public CustomerScript()
+    public void Init(float speed)
     {
         makeRandomOrder();
+        this.speed = speed;
     }
 
-    public CustomerScript(List<DrinkIngredient.IngredientType> special)
+    public void Init(List<DrinkIngredient.IngredientType> special, float speed)
     {
         order = special;
+        this.speed = speed;
     }
+    
+    [NonSerialized] public bool moving = false;
 
     // private variables
     private float timer = 20f;
-    [SerializeField] List<DrinkIngredient.IngredientType> order = new List<DrinkIngredient.IngredientType>();
-    private int r1;
-    private int r2;
-    private int r3;
+    private float speed = 0f;
+    [SerializeField] List<DrinkIngredient.IngredientType> order = new();
 
     // get functions
     public bool isTimerUp()
@@ -53,50 +56,40 @@ public class CustomerScript : MonoBehaviour
 
         Debug.Log(result);
     }
-
     
     public void makeRandomOrder()
     {
-        //int r = Random.Range(0, 2);
-        if (r1 == 0)
+        int r = Random.Range(0, 2);
+        if (r == 0)
             order.Add(DrinkIngredient.IngredientType.GreenTea);
         else
             order.Add(DrinkIngredient.IngredientType.BlackTea);
 
-        //r = Random.Range(0, 3);
-        if (r2 == 0)
+        r = Random.Range(0, 3);
+        if (r == 0)
             order.Add(DrinkIngredient.IngredientType.Milk);
-        else if (r2 == 1)
+        else if (r == 1)
             order.Add(DrinkIngredient.IngredientType.Fruit);
         else
             order.Add(DrinkIngredient.IngredientType.Plain);
 
-        //r = Random.Range(0, 3);
-        if (r3 == 0)
+        r = Random.Range(0, 3);
+        if (r == 0)
             order.Add(DrinkIngredient.IngredientType.Boba);
-        else if (r3 == 1)
+        else if (r == 1)
             order.Add(DrinkIngredient.IngredientType.Jelly);
         else
             order.Add(DrinkIngredient.IngredientType.NoTopping);
     }
 
-    private void Awake()
-    {
-        r1 = Random.Range(0, 2);
-        r2 = Random.Range(0, 3);
-        r3 = Random.Range(0, 3);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // makeRandomOrder();
-        // getOrder();
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if (moving)
+        {
+            transform.position += Time.deltaTime * speed * Vector3.left;
+        }
+        
         if (timer > 0)
             timer -= Time.deltaTime;
         else
