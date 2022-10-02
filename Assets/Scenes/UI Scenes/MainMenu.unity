@@ -1246,6 +1246,7 @@ MonoBehaviour:
   menu: {fileID: 1198801492}
   progressBar: {fileID: 416777990}
   loadingText: {fileID: 939807367}
+  sceneName: SampleScene
 --- !u!1 &1103481936
 GameObject:
   m_ObjectHideFlags: 0
