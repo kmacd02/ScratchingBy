@@ -50,9 +50,9 @@ public class DrinkContainer : MonoBehaviour
         }
         foreach (var t in ingredientTypes)
         {
-            if (t == type && !ingredients.Contains(type))
+            if (t == type)
             {
-                ingredients.Add(type);
+                if(!ingredients.Contains(type)) ingredients.Add(type);
             }else if (ingredients.Contains(t))
             {
                 ingredients.Remove(t);
