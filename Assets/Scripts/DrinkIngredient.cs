@@ -7,7 +7,7 @@ public class DrinkIngredient : MonoBehaviour
 {
     public enum IngredientType
     {
-        GreenTea, BlackTea, Milk, Fruit
+        GreenTea, BlackTea, Milk, Fruit, Plain, Boba, Jelly, NoTopping
     }
 
     [SerializeField] private IngredientType type;
