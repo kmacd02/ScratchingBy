@@ -8,16 +8,31 @@ public class DrinkContainer : MonoBehaviour
 {
     private List<DrinkIngredient.IngredientType> ingredients = new();
 
+    private Draggable draggable;
+    private float timer = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        draggable = GetComponent<Draggable>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!draggable.dragging && !draggable.inWorkArea)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            timer = 5f;
+        }
+
+        if (timer <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D col)

@@ -23,6 +23,7 @@ public class IngredientSpawner : MonoBehaviour
     private void OnMouseDown()
     {
         Vector2 position = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Instantiate(ingredient, position, Quaternion.identity);
+        GameObject g = Instantiate(ingredient, position, Quaternion.identity);
+        g.GetComponent<Draggable>().clicked();
     }
 }
