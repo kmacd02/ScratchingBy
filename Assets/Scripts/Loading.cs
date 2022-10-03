@@ -14,6 +14,7 @@ public class Loading : MonoBehaviour
     [SerializeField] Slider progressBar;
     [SerializeField] TextMeshProUGUI loadingText;
     [SerializeField] string sceneName = "SampleScene";
+    [SerializeField] string credits = "SampleScene";
 
     private void Start()
     {
@@ -26,8 +27,14 @@ public class Loading : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(LoadYourAsyncScene());
+        StartCoroutine(LoadYourAsyncScene(sceneName));
         loading.enabled = true;
+        menu.enabled = false;
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene(credits);
         menu.enabled = false;
     }
 
@@ -36,11 +43,11 @@ public class Loading : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator LoadYourAsyncScene()
+    IEnumerator LoadYourAsyncScene(string s)
     {
         // The Application loads the Scene in the background as the current Scene runs.
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(s);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)

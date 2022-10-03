@@ -34,7 +34,7 @@ public class IngredientSpawner : MonoBehaviour
         if (!limitedQuantity || amount > 0)
         {
             Vector2 position = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            GameObject g = Instantiate(ingredient, position, Quaternion.identity);
+            GameObject g = Instantiate(ingredient, new Vector3(position.x, position.y, -1), Quaternion.identity);
             g.GetComponent<Draggable>().clicked();
             if (limitedQuantity) amount--;
         }

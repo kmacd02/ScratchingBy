@@ -1,8 +1,11 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +20,9 @@ public class GameManager : MonoBehaviour
     
     public static Inputs inputs;
     public static bool hasPastries = true;
+    public static bool hasCoffee = true;
+
+    [SerializeField] private float fullGameTime = 600f; // 600 seconds for a full game
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +31,8 @@ public class GameManager : MonoBehaviour
         
         inputs.Player.ClickDown.Enable();
         inputs.Player.ClickUp.Enable();
+        
+        StartCoroutine(FullGame()); // full game time
     }
 
     // Update is called once per frame
@@ -87,11 +95,16 @@ public class GameManager : MonoBehaviour
 
         return default;
     }
-    
-    
 
     public bool HasSetting(string s)
     {
         return PlayerPrefs.HasKey(s);
+    }
+    
+    private IEnumerator FullGame()
+    {
+        yield return new WaitForSeconds(fullGameTime); // full game
+
+        SceneManager.LoadScene("EndScreen");
     }
 }

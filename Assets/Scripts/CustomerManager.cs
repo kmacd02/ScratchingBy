@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class CustomerManager : MonoBehaviour
@@ -85,15 +86,15 @@ public class CustomerManager : MonoBehaviour
             currentCustomers.First().transform.position.x > pausePosition.x;
         }
 
+        if (overflow.value >= 5)
+        {
+            SceneManager.LoadScene("DeathScreen");
+        }
+
         // show current customers in queue on screen
         if(currentCustomersInQueue <= 5) overflow.value = currentCustomersInQueue;
 
         Score();
-
-        if (overflow.value >= 5)
-        {
-            
-        }
     }
 
     // the most generic scoring system you've ever seen but done so horribly at like 1 am

@@ -16,8 +16,12 @@ public class TrashCan : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
+        Draggable dl = collision.gameObject.GetComponent<Draggable>();
+        if (dl != null && !dl.dragging)
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

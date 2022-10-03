@@ -38,6 +38,7 @@ public class Customer : MonoBehaviour
     private float speed = 0f;
     private bool orderComplete = false;
     [SerializeField] List<DrinkIngredient.IngredientType> order = new();
+    [SerializeField] public List<CoffeeIngredient.IngredientType> coffeeOrder = new();
     [SerializeField] string orderFood = null;
     [SerializeField] Sprite[] allNormalSprites;
     [SerializeField] Sprite[] allSpecialSprites;
@@ -64,7 +65,11 @@ public class Customer : MonoBehaviour
     
     public void makeRandomOrder()
     {
-        int type = GameManager.hasPastries ? Random.Range(0, 2) : 0;
+        
+        // int type = GameManager.hasPastries ? Random.Range(0, 2) : 0;
+        // type = GameManager.hasCoffee ? Random.Range(0, 3) : Random.Range(0, 2);
+
+        int type = 2;
         
         if (type == 0)
         {
@@ -74,23 +79,19 @@ public class Customer : MonoBehaviour
             else
                 order.Add(DrinkIngredient.IngredientType.BlackTea);
 
-            r = Random.Range(0, 2);
+            r = Random.Range(0, 3);
             if (r == 0)
                 order.Add(DrinkIngredient.IngredientType.Milk);
             else if (r == 1)
                 order.Add(DrinkIngredient.IngredientType.Fruit);
-            else
-                order.Add(DrinkIngredient.IngredientType.Plain);
 
-            r = Random.Range(0, 2);
+            r = Random.Range(0, 3);
             if (r == 0)
                 order.Add(DrinkIngredient.IngredientType.Boba);
             else if (r == 1)
                 order.Add(DrinkIngredient.IngredientType.Jelly);
-            else
-                order.Add(DrinkIngredient.IngredientType.NoTopping);
         }
-        else
+        else if(type == 1)
         {
             int r = Random.Range(0, 4);
 
@@ -111,6 +112,26 @@ public class Customer : MonoBehaviour
                 orderFood = "croissant";
             }
         }
+        else if (type == 2)
+        {
+            int r = Random.Range(0, 3);
+            if (r == 0)
+                coffeeOrder.Add(CoffeeIngredient.IngredientType.Light);
+            else if (r == 1)
+                coffeeOrder.Add(CoffeeIngredient.IngredientType.Medium);
+            else if (r == 2)
+                coffeeOrder.Add(CoffeeIngredient.IngredientType.Dark);
+
+            r = Random.Range(0, 2);
+            if (r == 0)
+                coffeeOrder.Add(CoffeeIngredient.IngredientType.Cream);
+            else if (r == 1)
+                coffeeOrder.Add(CoffeeIngredient.IngredientType.Carmel);
+
+            r = Random.Range(0, 2);
+            if (r == 0)
+                coffeeOrder.Add(CoffeeIngredient.IngredientType.Ice);
+        }
     }
 
     public bool checkOrder(List<DrinkIngredient.IngredientType> order)
@@ -124,6 +145,23 @@ public class Customer : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             if (!this.order.Contains(order[i]))
+                return false;
+        }
+
+        return true;
+    }
+
+    public bool checkOrder(List<CoffeeIngredient.IngredientType> order)
+    {
+        if (this.coffeeOrder.Count != order.Count)
+        {
+            return false;
+        }
+
+        int count = this.coffeeOrder.Count;
+        for (int i = 0; i < count; i++)
+        {
+            if (!this.coffeeOrder.Contains(order[i]))
                 return false;
         }
 
@@ -155,7 +193,23 @@ public class Customer : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         DrinkContainer dc = collision.GetComponent<DrinkContainer>();
-        if (dc != null && !dc.gameObject.GetComponent<Draggable>().dragging)
+        CoffeeContainer cc = collision.GetComponent<CoffeeContainer>();
+        if (cc != null && !cc.gameObject.GetComponent<Draggable>().dragging)
+        {
+            if (checkOrder(cc.getIngredients()))
+            {
+                orderComplete = true;
+                Destroy(collision.gameObject);
+                // Debug.Log("order complete");
+                if(timer > 0) FindObjectOfType<CustomerManager>().successfulOrders++;
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(collision.gameObject);
+                // Debug.Log("wrong order");
+            }
+        }else if (dc != null && !dc.gameObject.GetComponent<Draggable>().dragging)
         {
             if (checkOrder(dc.getIngredients()))
             {

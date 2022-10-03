@@ -5,6 +5,10 @@ using UnityEngine;
 public class SpeechBubble : MonoBehaviour
 {
     private List<DrinkIngredient.IngredientType> ingredients;
+    private List<CoffeeIngredient.IngredientType> cingredients;
+
+    [SerializeField] private GameObject ccef;
+    private CoffeeContainer cef;
 
     [SerializeField] Sprite green;
     [SerializeField] Sprite black;
@@ -30,7 +34,6 @@ public class SpeechBubble : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -41,9 +44,136 @@ public class SpeechBubble : MonoBehaviour
 
     public void setSpeech()
     {
-        string food = gameObject.transform.parent.gameObject.GetComponent<Customer>().getOrderFood();
         GameObject order = gameObject.transform.GetChild(0).gameObject;
+        
+        cef = ccef.GetComponent<CoffeeContainer>();
+        
+        cingredients = gameObject.transform.parent.gameObject.GetComponent<Customer>().coffeeOrder;
 
+        if (cingredients.Count > 0)
+        {
+            int ccount = cingredients.Count;
+            if (ccount == 0)
+                return;
+            if (cingredients.Contains(CoffeeIngredient.IngredientType.Light))
+            {
+                if (ccount == 1)
+                {
+                    order.GetComponent<SpriteRenderer>().sprite = cef.light;
+                }
+                else
+                {
+                    if (cingredients.Contains(CoffeeIngredient.IngredientType.Cream))
+                    {
+                        if (ccount == 2)
+                        {
+                            order.GetComponent<SpriteRenderer>().sprite = cef.creamLight;
+                        }
+                        else
+                        {
+                            if (cingredients.Contains(CoffeeIngredient.IngredientType.Ice))
+                            {
+                                order.GetComponent<SpriteRenderer>().sprite = cef.icedCreamLight;
+                            }
+                        }
+                    }
+                    else if (cingredients.Contains(CoffeeIngredient.IngredientType.Carmel))
+                    {
+                        if (ccount == 2)
+                        {
+                            order.GetComponent<SpriteRenderer>().sprite = cef.carmelLight;
+                        }
+                        else
+                        {
+                            if (cingredients.Contains(CoffeeIngredient.IngredientType.Ice))
+                            {
+                                order.GetComponent<SpriteRenderer>().sprite = cef.icedCarmelLight;
+                            }
+                        }
+                    }
+                }
+            }
+            else if (cingredients.Contains(CoffeeIngredient.IngredientType.Medium))
+            {
+                if (ccount == 1)
+                {
+                    order.GetComponent<SpriteRenderer>().sprite = cef.medium;
+                }
+                else
+                {
+                    if (cingredients.Contains(CoffeeIngredient.IngredientType.Cream))
+                    {
+                        if (ccount == 2)
+                        {
+                            order.GetComponent<SpriteRenderer>().sprite = cef.creamMedium;
+                        }
+                        else
+                        {
+                            if (cingredients.Contains(CoffeeIngredient.IngredientType.Ice))
+                            {
+                                order.GetComponent<SpriteRenderer>().sprite = cef.icedCreamMedium;
+                            }
+                        }
+                    }
+                    else if (cingredients.Contains(CoffeeIngredient.IngredientType.Carmel))
+                    {
+                        if (ccount == 2)
+                        {
+                            order.GetComponent<SpriteRenderer>().sprite = cef.carmelMedium;
+                        }
+                        else
+                        {
+                            if (cingredients.Contains(CoffeeIngredient.IngredientType.Ice))
+                            {
+                                order.GetComponent<SpriteRenderer>().sprite = cef.icedCarmelMedium;
+                            }
+                        }
+                    }
+                }
+            }
+            else if (cingredients.Contains(CoffeeIngredient.IngredientType.Dark))
+            {
+                if (ccount == 1)
+                {
+                    order.GetComponent<SpriteRenderer>().sprite = cef.dark;
+                }
+                else
+                {
+                    if (cingredients.Contains(CoffeeIngredient.IngredientType.Cream))
+                    {
+                        if (ccount == 2)
+                        {
+                            order.GetComponent<SpriteRenderer>().sprite = cef.creamDark;
+                        }
+                        else
+                        {
+                            if (cingredients.Contains(CoffeeIngredient.IngredientType.Ice))
+                            {
+                                order.GetComponent<SpriteRenderer>().sprite = cef.icedCreamDark;
+                            }
+                        }
+                    }
+                    else if (cingredients.Contains(CoffeeIngredient.IngredientType.Carmel))
+                    {
+                        if (ccount == 2)
+                        {
+                            order.GetComponent<SpriteRenderer>().sprite = cef.carmelDark;
+                        }
+                        else
+                        {
+                            if (cingredients.Contains(CoffeeIngredient.IngredientType.Ice))
+                            {
+                                order.GetComponent<SpriteRenderer>().sprite = cef.icedCarmelDark;
+                            }
+                        }
+                    }
+                }
+            }
+            return;
+        }
+        
+        string food = gameObject.transform.parent.gameObject.GetComponent<Customer>().getOrderFood();
+        
         if (!string.IsNullOrEmpty(food))
         {
             switch (food)

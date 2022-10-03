@@ -25,14 +25,14 @@ public class Draggable : MonoBehaviour
         if (dragging)
         {
             transform.position = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()) + offset;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1);
         }
 
         if (GameManager.inputs.Player.ClickDown.triggered && isMouseOver)
         {
             clicked();
         }
-        Debug.Log(GameManager.inputs.Player.ClickUp.triggered);
+        // Debug.Log(GameManager.inputs.Player.ClickUp.triggered);
 
         if (GameManager.inputs.Player.ClickUp.triggered)
         {
