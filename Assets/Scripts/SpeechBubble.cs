@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SpeechBubble : MonoBehaviour
 {
-    private List<DrinkIngredient.IngredientType> customer;
+    private List<DrinkIngredient.IngredientType> customerOrder;
 
     // Start is called before the first frame update
     void Start()
     {
-        customer = gameObject.transform.parent.gameObject.GetComponent<Customer>().getOrder();
+        customerOrder = gameObject.transform.parent.gameObject.GetComponent<Customer>().getOrder();
     }
 
     // Update is called once per frame
@@ -17,4 +17,6 @@ public class SpeechBubble : MonoBehaviour
     {
         
     }
+
+    void 
 }
