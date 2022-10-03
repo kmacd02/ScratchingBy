@@ -8,15 +8,13 @@ public class Customer : MonoBehaviour
     // Constructors
     public void Init(float speed)
     {
-        // makeRandomOrder();
-        order = new List<DrinkIngredient.IngredientType>();
-        order.Add(DrinkIngredient.IngredientType.GreenTea);
-        order.Add(DrinkIngredient.IngredientType.Fruit);
-        order.Add(DrinkIngredient.IngredientType.Boba);
+        makeRandomOrder();
         this.speed = speed;
 
         int spriteNum = Random.Range(0, 7);
         this.GetComponent<SpriteRenderer>().sprite = allNormalSprites[spriteNum];
+
+        speechBubble.GetComponent<SpeechBubble>().setSpeech();
     }
 
     public void Init(List<DrinkIngredient.IngredientType> special, float speed, int appearance)
@@ -42,6 +40,7 @@ public class Customer : MonoBehaviour
     [SerializeField] List<DrinkIngredient.IngredientType> order = new();
     [SerializeField] Sprite[] allNormalSprites;
     [SerializeField] Sprite[] allSpecialSprites;
+    [SerializeField] GameObject speechBubble;
 
     // get functions
     public bool isTimerUp()
@@ -64,7 +63,7 @@ public class Customer : MonoBehaviour
         else
             order.Add(DrinkIngredient.IngredientType.BlackTea);
 
-        r = Random.Range(0, 3);
+        r = Random.Range(0, 2);
         if (r == 0)
             order.Add(DrinkIngredient.IngredientType.Milk);
         else if (r == 1)
@@ -72,7 +71,7 @@ public class Customer : MonoBehaviour
         else
             order.Add(DrinkIngredient.IngredientType.Plain);
 
-        r = Random.Range(0, 3);
+        r = Random.Range(0, 2);
         if (r == 0)
             order.Add(DrinkIngredient.IngredientType.Boba);
         else if (r == 1)

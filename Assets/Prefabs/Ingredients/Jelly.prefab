@@ -24,6 +24,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943704, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 459731794271943704, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SortingLayerID
       value: -1139935243
       objectReference: {fileID: 0}
@@ -85,11 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
+      value: 0.7745478
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
+      value: 0.5229689
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w

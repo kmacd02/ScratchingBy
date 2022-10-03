@@ -69,7 +69,7 @@ public class DrinkContainer : MonoBehaviour
                 !ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.BlackTea,
                     DrinkIngredient.IngredientType.GreenTea))
             {
-                if(!ingredients.Contains(di.getType()))
+                if(!ingredients.Contains(di.getType()) && ingredients.Count < 3)
                 {
                     ingredients.Add(di.getType());
                     changeSprite();
@@ -95,7 +95,7 @@ public class DrinkContainer : MonoBehaviour
         {
             if (t == type)
             {
-                if(!ingredients.Contains(type))
+                if(!ingredients.Contains(type) && ingredients.Count < 3)
                 {
                     ingredients.Add(type);
                     changeSprite();
