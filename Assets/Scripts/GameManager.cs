@@ -26,10 +26,10 @@ public class GameManager : MonoBehaviour
             timer = 0;
         }
 
-        fade.rectTransform.offsetMax = new Vector2(fade.rectTransform.offsetMax.x, -timer / 10 * 150);
+        if(fade != null) fade.rectTransform.offsetMax = new Vector2(fade.rectTransform.offsetMax.x, -timer / 10 * 150);
     }
 
-    bool SaveSetting<T> (string s, T value)
+    public bool SaveSetting<T> (string s, T value)
     {
         if (typeof(T) == typeof(string))
         {
@@ -50,9 +50,9 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    T LoadSetting<T>(string s)
+    public T LoadSetting<T>(string s)
     {
-        if (PlayerPrefs.HasKey(s)) return default;
+        if (!PlayerPrefs.HasKey(s)) return default;
         
         if (typeof(T) == typeof(string))
         {
@@ -68,5 +68,12 @@ public class GameManager : MonoBehaviour
         }
 
         return default;
+    }
+    
+    
+
+    public bool HasSetting(string s)
+    {
+        return PlayerPrefs.HasKey(s);
     }
 }
