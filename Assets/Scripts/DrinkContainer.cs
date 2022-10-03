@@ -25,6 +25,8 @@ public class DrinkContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("timer: " + timer);
+
         if (!draggable.dragging && !draggable.inWorkArea)
         {
             timer -= Time.deltaTime;
@@ -45,7 +47,9 @@ public class DrinkContainer : MonoBehaviour
         DrinkIngredient di = col.gameObject.GetComponent<DrinkIngredient>();
         if (di != null && !di.gameObject.GetComponent<Draggable>().dragging)
         {
-            if (!ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.Fruit,
+            if (!ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.Boba,
+                    DrinkIngredient.IngredientType.Jelly) &&
+                !ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.Fruit,
                     DrinkIngredient.IngredientType.Milk) &&
                 !ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.BlackTea,
                     DrinkIngredient.IngredientType.GreenTea))
