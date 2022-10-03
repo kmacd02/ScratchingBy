@@ -11,7 +11,7 @@ public class Customer : MonoBehaviour
         makeRandomOrder();
         this.speed = speed;
 
-        int spriteNum = Random.Range(0, 7);
+        int spriteNum = Random.Range(0, 14);
         this.GetComponent<SpriteRenderer>().sprite = allNormalSprites[spriteNum];
 
         speechBubble.GetComponent<SpeechBubble>().setSpeech();

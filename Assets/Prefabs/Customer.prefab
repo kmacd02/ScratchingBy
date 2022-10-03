@@ -330,6 +330,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 732cfb51854e15746879789e55db611c, type: 3}
   - {fileID: 21300000, guid: 3dd30fbb0cf2b4849a9c4290544e5621, type: 3}
   - {fileID: 21300000, guid: c82e91bd7f572354c971c884c49ad594, type: 3}
+  - {fileID: 21300000, guid: 312b9b0003a6341438c46e56803773fa, type: 3}
+  - {fileID: 21300000, guid: 84e5a694313937349a419de0b7c4d1b0, type: 3}
+  - {fileID: 21300000, guid: 44a4cc46881d2e54896b8817ad7e5b95, type: 3}
+  - {fileID: 21300000, guid: b88156d85df68744fb8ced41357e011a, type: 3}
+  - {fileID: 21300000, guid: b37eb720deea29840bbe8b1c7f356b08, type: 3}
+  - {fileID: 21300000, guid: 7cfadcf84712001479897b590d19f9c1, type: 3}
+  - {fileID: 21300000, guid: a86b234f27d78f349a8285afe2a2d3b0, type: 3}
   allSpecialSprites:
   - {fileID: 21300000, guid: a86b234f27d78f349a8285afe2a2d3b0, type: 3}
   - {fileID: 21300000, guid: 312b9b0003a6341438c46e56803773fa, type: 3}
