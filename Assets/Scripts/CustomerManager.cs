@@ -13,6 +13,8 @@ public class CustomerManager : MonoBehaviour
     [SerializeField] private GameObject customerPrefab;
     private List<GameObject> currentCustomers = new();
     private int currentCustomersInQueue = 0;
+    [SerializeField] private int numCustomersLeft = 10;
+    private int successfulOrders = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,7 @@ public class CustomerManager : MonoBehaviour
         GameObject newCustomer = Instantiate(customerPrefab, instantiatePosition, Quaternion.identity);
         newCustomer.GetComponent<Customer>().Init(speed);
         currentCustomers.Add(newCustomer);
+        // numCustomersLeft--;
 
         currentCustomersInQueue = Random.Range(0, 3);
         
@@ -33,6 +36,17 @@ public class CustomerManager : MonoBehaviour
     void Update()
     {
         int count = currentCustomers.Count;
+
+        for (int i = 0; i < count; i++)
+        {
+            if (currentCustomers[i].GetComponent<Customer>().isOrderComplete())
+            {
+                successfulOrders++;
+                currentCustomers[i].SetActive(false);
+            }
+        }
+
+        count = currentCustomers.Count;
         
         //Num of destroyed customers
         int numDestroyed = 0;
@@ -58,6 +72,7 @@ public class CustomerManager : MonoBehaviour
             GameObject newCustomer = Instantiate(customerPrefab, instantiatePosition, Quaternion.identity);
             newCustomer.GetComponent<Customer>().Init(speed);
             currentCustomers.Add(newCustomer);
+            // numCustomersLeft--;
             currentCustomersInQueue--;
         }
         

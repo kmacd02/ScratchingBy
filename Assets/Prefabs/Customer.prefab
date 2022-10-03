@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8373410276689419812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2005, y: 4.7044, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fe1c8bb8aad6a546b8212fa84d9e059, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,18 +99,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.26164293, y: 0.015337467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 17.94, y: 15.82}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 14.367564, y: 11.496383}
   m_EdgeRadius: 0
 --- !u!114 &-2348278041925859665
 MonoBehaviour:
@@ -125,3 +125,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 
+  allNormalSprites:
+  - {fileID: 21300000, guid: 6fe1c8bb8aad6a546b8212fa84d9e059, type: 3}
+  - {fileID: 21300000, guid: 8b04366e8714d9d4c9146af4466a7620, type: 3}
+  - {fileID: 21300000, guid: 2801ce727b5cd584bbb91e6fa144a565, type: 3}
+  - {fileID: 21300000, guid: 0e7f59de238387145a45a236eece31b8, type: 3}
+  - {fileID: 21300000, guid: 732cfb51854e15746879789e55db611c, type: 3}
+  - {fileID: 21300000, guid: 3dd30fbb0cf2b4849a9c4290544e5621, type: 3}
+  - {fileID: 21300000, guid: c82e91bd7f572354c971c884c49ad594, type: 3}
+  allSpecialSprites:
+  - {fileID: 21300000, guid: a86b234f27d78f349a8285afe2a2d3b0, type: 3}
+  - {fileID: 21300000, guid: 312b9b0003a6341438c46e56803773fa, type: 3}
+  - {fileID: 21300000, guid: 84e5a694313937349a419de0b7c4d1b0, type: 3}
+  - {fileID: 21300000, guid: 44a4cc46881d2e54896b8817ad7e5b95, type: 3}
+  - {fileID: 21300000, guid: b88156d85df68744fb8ced41357e011a, type: 3}
+  - {fileID: 21300000, guid: b37eb720deea29840bbe8b1c7f356b08, type: 3}
+  - {fileID: 21300000, guid: 7cfadcf84712001479897b590d19f9c1, type: 3}

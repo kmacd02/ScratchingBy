@@ -8,6 +8,11 @@ public class DrinkContainer : MonoBehaviour
 {
     private List<DrinkIngredient.IngredientType> ingredients = new();
 
+    public List<DrinkIngredient.IngredientType> getIngredients()
+    {
+        return ingredients;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
