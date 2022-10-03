@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
             timer = 10f;
         }
 
-        if(fade != null) fade.rectTransform.offsetMax = new Vector2(fade.rectTransform.offsetMax.x, -timer / 10 * 150);
+        if(fade != null) fade.rectTransform.offsetMax = new Vector2(fade.rectTransform.offsetMax.x, -150 + timer / 10 * 150);
     }
 
     private void OnDestroy()

@@ -42,7 +42,8 @@ public class Customer : MonoBehaviour
     [SerializeField] Sprite[] allNormalSprites;
     [SerializeField] Sprite[] allSpecialSprites;
     [SerializeField] GameObject speechBubble;
-
+    [SerializeField] private GameObject angy;
+ 
     // get functions
     public bool isTimerUp()
     {
@@ -145,7 +146,10 @@ public class Customer : MonoBehaviour
         if (timer > 0)
             timer -= Time.deltaTime;
         else
+        {
             timer = 0;
+            angy.SetActive(true);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -157,12 +161,14 @@ public class Customer : MonoBehaviour
             {
                 orderComplete = true;
                 Destroy(collision.gameObject);
-                Debug.Log("order complete");
+                // Debug.Log("order complete");
+                if(timer > 0) FindObjectOfType<CustomerManager>().successfulOrders++;
+                Destroy(gameObject);
             }
             else
             {
                 Destroy(collision.gameObject);
-                Debug.Log("wrong order");
+                // Debug.Log("wrong order");
             }
         }
         else if (!string.IsNullOrEmpty(orderFood) && !collision.gameObject.GetComponent<Draggable>().dragging)
@@ -171,7 +177,9 @@ public class Customer : MonoBehaviour
             {
                 orderComplete = true;
                 Destroy(collision.gameObject);
-                Debug.Log("order complete");
+                // Debug.Log("order complete");
+                if(timer > 0) FindObjectOfType<CustomerManager>().successfulOrders++;
+                Destroy(gameObject);
             }
         }
     }

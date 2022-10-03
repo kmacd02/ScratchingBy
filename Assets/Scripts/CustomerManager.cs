@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class CustomerManager : MonoBehaviour
     private List<GameObject> currentCustomers = new();
     private int currentCustomersInQueue = 0;
     [SerializeField] private int numCustomersLeft = 10;
-    private int successfulOrders = 0;
+    [NonSerialized] public int successfulOrders = 0;
     public TextMeshProUGUI scoreCounter;
 
     [Header("Overflow Slider")]
@@ -43,32 +45,11 @@ public class CustomerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int count = currentCustomers.Count;
-
-        for (int i = count - 1; i >= 0; i--)
+        for (int i = 0; i < currentCustomers.Count; i++)
         {
-            if (currentCustomers[i].GetComponent<Customer>().isOrderComplete())
+            if (currentCustomers[i] == null)
             {
-                successfulOrders++;
-                // currentCustomers[i].SetActive(false);
-                GameObject c = currentCustomers[i];
-                currentCustomers.RemoveAt(i);
-                Destroy(c);
-            }
-        }
-
-        count = currentCustomers.Count;
-        
-        //Num of destroyed customers
-        int numDestroyed = 0;
-        for (int i = count - 1; i >= 0; i--)
-        {
-            if (currentCustomers[i].GetComponent<Customer>().isTimerUp())
-            {
-                GameObject c = currentCustomers[i];
-                currentCustomers.RemoveAt(i);
-                Destroy(c);
-                numDestroyed++;
+                currentCustomers.Remove(currentCustomers[i]);
             }
         }
 
@@ -108,6 +89,11 @@ public class CustomerManager : MonoBehaviour
         if(currentCustomersInQueue <= 5) overflow.value = currentCustomersInQueue;
 
         Score();
+
+        if (overflow.value >= 5)
+        {
+            
+        }
     }
 
     // the most generic scoring system you've ever seen but done so horribly at like 1 am
