@@ -2,13 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public UnityEvent tenSecondsPassed;
-    [NonSerialized] public float timer = 0f;
+    [NonSerialized] public float timer = 10f;
 
-    [SerializeField] private Image fade; 
+    [SerializeField] private Image fade;
+    [SerializeField] private TextMeshProUGUI text;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= 10f)
+        timer -= Time.deltaTime;
+        text.text = Mathf.RoundToInt(timer).ToString(); // convert timer to string
+        if (timer <= 0f)
         {
             tenSecondsPassed.Invoke();
-            timer = 0;
+            timer = 10f;
         }
 
         if(fade != null) fade.rectTransform.offsetMax = new Vector2(fade.rectTransform.offsetMax.x, -timer / 10 * 150);
