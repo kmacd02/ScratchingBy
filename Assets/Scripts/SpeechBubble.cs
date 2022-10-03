@@ -18,5 +18,5 @@ public class SpeechBubble : MonoBehaviour
         
     }
 
-    void 
+    
 }
