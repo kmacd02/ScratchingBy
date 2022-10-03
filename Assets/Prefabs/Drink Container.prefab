@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 459731794271943704, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943704, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SortingLayerID
@@ -61,6 +61,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943706, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_Name
+      value: Drink Container
+      objectReference: {fileID: 0}
+    - target: {fileID: 459731794271943706, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
+      propertyPath: m_TagString
       value: Drink Container
       objectReference: {fileID: 0}
     m_RemovedComponents: []

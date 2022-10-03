@@ -137,11 +137,12 @@ public class Customer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Drink Container")
+        if (collision.gameObject.tag == "Drink Container")
         {
             if (checkOrder(collision.gameObject.GetComponent<DrinkContainer>().getIngredients()))
             {
                 orderComplete = true;
+                Destroy(collision.gameObject);
                 Debug.Log("order complete");
             }
         }

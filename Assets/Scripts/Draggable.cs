@@ -27,7 +27,7 @@ public class Draggable : MonoBehaviour
         inputs.Player.ClickDown.Enable();
         inputs.Player.ClickUp.Enable();
         
-        Debug.Log("test");
+        // Debug.Log("test");
     }
 
     private void OnDisable()
@@ -49,11 +49,11 @@ public class Draggable : MonoBehaviour
         {
             clicked();
         }
-        Debug.Log("test");
+        // Debug.Log("test");
 
         if (inputs.Player.ClickUp.triggered && isMouseOver)
         {
-            Debug.Log("test");
+            // Debug.Log("test");
             dragging = false;
         }
     }

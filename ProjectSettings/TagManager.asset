@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Drink Container
+  - Customer
   layers:
   - Default
   - TransparentFX
@@ -40,6 +42,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Customers
+    uniqueID: 2943340355
+    locked: 0
+  - name: Containers
+    uniqueID: 3570951079
     locked: 0
   - name: Objects
     uniqueID: 3155032053

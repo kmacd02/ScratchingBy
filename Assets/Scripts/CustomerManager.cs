@@ -37,12 +37,15 @@ public class CustomerManager : MonoBehaviour
     {
         int count = currentCustomers.Count;
 
-        for (int i = 0; i < count; i++)
+        for (int i = count - 1; i >= 0; i--)
         {
             if (currentCustomers[i].GetComponent<Customer>().isOrderComplete())
             {
                 successfulOrders++;
-                currentCustomers[i].SetActive(false);
+                // currentCustomers[i].SetActive(false);
+                GameObject c = currentCustomers[i];
+                currentCustomers.RemoveAt(i);
+                Destroy(c);
             }
         }
 
@@ -66,17 +69,31 @@ public class CustomerManager : MonoBehaviour
             currentCustomers[i].GetComponent<Customer>().moving = Vector3.Distance(currentCustomers[i].transform.position, currentCustomers[i-1].transform.position) > distanceBetweenCustomers;
         }
 
-        if (Vector3.Distance(currentCustomers.Last().transform.position, instantiatePosition) >
-            distanceBetweenCustomers && currentCustomersInQueue > 0 && currentCustomers.Count < 4)
+        if (currentCustomers.Count == 0 && currentCustomersInQueue > 0)
         {
             GameObject newCustomer = Instantiate(customerPrefab, instantiatePosition, Quaternion.identity);
             newCustomer.GetComponent<Customer>().Init(speed);
             currentCustomers.Add(newCustomer);
-            // numCustomersLeft--;
             currentCustomersInQueue--;
         }
-        
-        currentCustomers.First().GetComponent<Customer>().moving =
+
+        if (currentCustomers.Count != 0)
+        {
+            if (Vector3.Distance(currentCustomers.Last().transform.position, instantiatePosition) >
+            distanceBetweenCustomers && currentCustomersInQueue > 0 && currentCustomers.Count < 4)
+            {
+                GameObject newCustomer = Instantiate(customerPrefab, instantiatePosition, Quaternion.identity);
+                newCustomer.GetComponent<Customer>().Init(speed);
+                currentCustomers.Add(newCustomer);
+                // numCustomersLeft--;
+                currentCustomersInQueue--;
+            }
+        }
+
+        if (currentCustomers.Count != 0)
+        {
+            currentCustomers.First().GetComponent<Customer>().moving =
             currentCustomers.First().transform.position.x > pausePosition.x;
+        }
     }
 }
