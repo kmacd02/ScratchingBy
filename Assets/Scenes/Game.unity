@@ -2132,7 +2132,7 @@ MonoBehaviour:
       m_Calls: []
   fade: {fileID: 936641912}
   text: {fileID: 918589174}
-  fullGameTime: 600
+  cursor: {fileID: 0}
 --- !u!4 &1569247213
 Transform:
   m_ObjectHideFlags: 0
@@ -2156,9 +2156,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1142396895, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+      propertyPath: bgm
+      value: 
+      objectReference: {fileID: 1587611601}
+    - target: {fileID: 1142396895, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
       propertyPath: masterVol
       value: 
       objectReference: {fileID: 215879930}
+    - target: {fileID: 1142396895, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+      propertyPath: pauseMusic
+      value: 
+      objectReference: {fileID: 1587611602}
+    - target: {fileID: 1142396898, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1952230474985120177, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2207,8 +2219,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: AUDIO
       objectReference: {fileID: 0}
+    - target: {fileID: 4271760023214992005, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+--- !u!82 &1587611601 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1142396898, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+  m_PrefabInstance: {fileID: 1587611600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1587611602 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4271760023214992005, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+  m_PrefabInstance: {fileID: 1587611600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1718975945
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public UnityEvent tenSecondsPassed;
     [NonSerialized] public float timer = 10f;
+    public static int score;
 
     [SerializeField] private Image fade;
     [SerializeField] private TextMeshProUGUI text;
