@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
             timer = 0;
         }
 
-        fade.rectTransform.offsetMax = new Vector2(fade.rectTransform.offsetMax.x, -timer / 10 * 150);
+        if(fade != null) fade.rectTransform.offsetMax = new Vector2(fade.rectTransform.offsetMax.x, -timer / 10 * 150);
     }
 
     public bool SaveSetting<T> (string s, T value)

@@ -28,16 +28,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    /*public void towerTabSwap()
-    {
-        if (BotsBioMenu.activeInHierachy == true || mysteryBioMenu.activeInHierarchy == true)
-        {
-            BotsBioMenu.setActive(false);
-            mysteryBioMenu.setActive(false);
-        }
-        else break;
-    }
-    */
     public void openPanel()
     {
         if (panel != null)
