@@ -38,6 +38,7 @@ public class Customer : MonoBehaviour
     private float speed = 0f;
     private bool orderComplete = false;
     [SerializeField] List<DrinkIngredient.IngredientType> order = new();
+    [SerializeField] GameObject orderFood = null;
     [SerializeField] Sprite[] allNormalSprites;
     [SerializeField] Sprite[] allSpecialSprites;
     [SerializeField] GameObject speechBubble;
@@ -57,27 +58,53 @@ public class Customer : MonoBehaviour
     
     public void makeRandomOrder()
     {
-        int r = Random.Range(0, 2);
-        if (r == 0)
-            order.Add(DrinkIngredient.IngredientType.GreenTea);
-        else
-            order.Add(DrinkIngredient.IngredientType.BlackTea);
+        int type = Random.Range(0, 2);
 
-        r = Random.Range(0, 2);
-        if (r == 0)
-            order.Add(DrinkIngredient.IngredientType.Milk);
-        else if (r == 1)
-            order.Add(DrinkIngredient.IngredientType.Fruit);
-        else
-            order.Add(DrinkIngredient.IngredientType.Plain);
+        if (type == 0)
+        {
+            int r = Random.Range(0, 2);
+            if (r == 0)
+                order.Add(DrinkIngredient.IngredientType.GreenTea);
+            else
+                order.Add(DrinkIngredient.IngredientType.BlackTea);
 
-        r = Random.Range(0, 2);
-        if (r == 0)
-            order.Add(DrinkIngredient.IngredientType.Boba);
-        else if (r == 1)
-            order.Add(DrinkIngredient.IngredientType.Jelly);
+            r = Random.Range(0, 2);
+            if (r == 0)
+                order.Add(DrinkIngredient.IngredientType.Milk);
+            else if (r == 1)
+                order.Add(DrinkIngredient.IngredientType.Fruit);
+            else
+                order.Add(DrinkIngredient.IngredientType.Plain);
+
+            r = Random.Range(0, 2);
+            if (r == 0)
+                order.Add(DrinkIngredient.IngredientType.Boba);
+            else if (r == 1)
+                order.Add(DrinkIngredient.IngredientType.Jelly);
+            else
+                order.Add(DrinkIngredient.IngredientType.NoTopping);
+        }
         else
-            order.Add(DrinkIngredient.IngredientType.NoTopping);
+        {
+            int r = Random.Range(0, 4);
+
+            if (r == 0)
+            {
+
+            }
+            else if (r == 1)
+            {
+
+            }
+            else if (r == 2)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 
     public bool checkOrder(List<DrinkIngredient.IngredientType> order)
