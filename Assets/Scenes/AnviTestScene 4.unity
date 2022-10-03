@@ -1949,11 +1949,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5.0000305, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1007639085 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1952230474985120335, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
-  m_PrefabInstance: {fileID: 1587611600}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1026448846
 GameObject:
   m_ObjectHideFlags: 0
@@ -2382,20 +2377,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 1952230474985120334, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
   m_PrefabInstance: {fileID: 1587611600}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1142396895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007639085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454c56ff5b0a4b34297140377b3736a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aux: {fileID: 24100000, guid: bc49a5447b6ceff45a55419f9d4924be, type: 2}
-  masterVol: {fileID: 215879930}
 --- !u!1 &1157680083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,6 +3152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1142396895, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+      propertyPath: masterVol
+      value: 
+      objectReference: {fileID: 215879930}
     - target: {fileID: 1952230474985120177, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
       propertyPath: m_RootOrder
       value: 6
