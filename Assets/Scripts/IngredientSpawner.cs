@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class IngredientSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject ingredient;
+    private SpriteRenderer highlight;
     
     // Start is called before the first frame update
     void Start()
@@ -25,5 +26,17 @@ public class IngredientSpawner : MonoBehaviour
         Vector2 position = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         GameObject g = Instantiate(ingredient, position, Quaternion.identity);
         g.GetComponent<Draggable>().clicked();
+    }
+
+    private void OnMouseOver()
+    {
+        highlight = GetComponentInChildren<SpriteRenderer>();
+        highlight.enabled = true;
+    }
+
+    private void OnMouseExit()
+    {
+        highlight = GetComponentInChildren<SpriteRenderer>();
+        highlight.enabled = false;
     }
 }
