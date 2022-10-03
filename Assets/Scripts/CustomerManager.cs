@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class CustomerManager : MonoBehaviour
     private int currentCustomersInQueue = 0;
     [SerializeField] private int numCustomersLeft = 10;
     private int successfulOrders = 0;
+
+    [Header("Overflow Slider")]
+    [SerializeField] private Slider overflow;
 
     // Start is called before the first frame update
     void Start()
@@ -95,5 +99,8 @@ public class CustomerManager : MonoBehaviour
             currentCustomers.First().GetComponent<Customer>().moving =
             currentCustomers.First().transform.position.x > pausePosition.x;
         }
+
+        // show current customers in queue on screen
+        if(currentCustomersInQueue <= 5) overflow.value = currentCustomersInQueue;
     }
 }
