@@ -9,7 +9,9 @@ public class Settings : MonoBehaviour
     private GameManager g;
 
     [SerializeField] private AudioMixer aux;
-    
+    [SerializeField] private AudioSource bgm;
+    [SerializeField] private AudioSource pauseMusic;
+
     [SerializeField] private Slider masterVol;
     
     private const string MASTER_VOL = "Master Volume";
@@ -42,6 +44,25 @@ public class Settings : MonoBehaviour
             aux.SetFloat("MasterVolume", masterVol.value - volAdjust);
 
             masterVol.interactable = true; // make interactable
+        }
+    }
+
+    public void SwapMusic(float track)
+    {
+        switch (track)
+        {
+            case 0:
+                bgm.Pause();
+                pauseMusic.Play();
+                break;
+            case 1:
+                bgm.Play();
+                pauseMusic.Pause();
+                break;
+            default:
+                bgm.Play();
+                pauseMusic.Pause();
+                break;
         }
     }
 }
