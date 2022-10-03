@@ -12,6 +12,7 @@ TagManager:
   - Mix_Donut
   - Mix_Croissant
   - Mix_Roll
+  - Highlight
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 3155032053
+    locked: 0
+  - name: Top
+    uniqueID: 3936432227
     locked: 0

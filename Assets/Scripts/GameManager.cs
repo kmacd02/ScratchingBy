@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image fade;
     [SerializeField] private TextMeshProUGUI text;
 
+    [SerializeField] private Texture2D cursor;
+
     // Start is called before the first frame update
     void Start()
     {

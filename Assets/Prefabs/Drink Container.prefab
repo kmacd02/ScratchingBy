@@ -96,6 +96,10 @@ PrefabInstance:
       value: -0.54604816
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5129199
       objectReference: {fileID: 0}
