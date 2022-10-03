@@ -31,6 +31,11 @@ public class Loading : MonoBehaviour
         menu.enabled = false;
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     IEnumerator LoadYourAsyncScene()
     {
         // The Application loads the Scene in the background as the current Scene runs.
