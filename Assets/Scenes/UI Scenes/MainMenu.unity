@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1142396898, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1952230474985120177, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -177,6 +181,14 @@ PrefabInstance:
     - target: {fileID: 1952230474985120335, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
       propertyPath: m_Name
       value: AUDIO
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271760023214992005, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271760023214992005, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecfd2eb936bcd5f4e9b53457216f9b21, type: 3}
@@ -555,9 +567,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.5686275, g: 0.6862745, b: 0.5686275, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9490197, g: 0.7176471, b: 0.49411768, a: 1}
+    m_PressedColor: {r: 0.38823533, g: 0.29803923, b: 0.22352943, a: 1}
+    m_SelectedColor: {r: 0.40000004, g: 0.3019608, b: 0.22352943, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -573,13 +585,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1196970606}
+  m_TargetGraphic: {fileID: 2071998745}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2567249}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 1066138828}
+        m_TargetAssemblyTypeName: Loading, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -589,9 +601,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1066138828}
-        m_TargetAssemblyTypeName: Loading, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 2567249}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -614,7 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.54509807, g: 0.65882355, b: 0.54509807, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1007,9 +1019,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.5686275, g: 0.6862745, b: 0.5686275, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9490197, g: 0.7176471, b: 0.49411768, a: 1}
+    m_PressedColor: {r: 0.38823533, g: 0.29803923, b: 0.22352943, a: 1}
+    m_SelectedColor: {r: 0.40000004, g: 0.3019608, b: 0.22352943, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
