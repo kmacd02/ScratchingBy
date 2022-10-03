@@ -12,6 +12,7 @@ public class Customer : MonoBehaviour
         order = new List<DrinkIngredient.IngredientType>();
         order.Add(DrinkIngredient.IngredientType.GreenTea);
         order.Add(DrinkIngredient.IngredientType.Fruit);
+        order.Add(DrinkIngredient.IngredientType.Boba);
         this.speed = speed;
 
         int spriteNum = Random.Range(0, 7);
@@ -144,6 +145,11 @@ public class Customer : MonoBehaviour
                 orderComplete = true;
                 Destroy(collision.gameObject);
                 Debug.Log("order complete");
+            }
+            else
+            {
+                Destroy(collision.gameObject);
+                Debug.Log("wrong order");
             }
         }
     }

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de933701b3a86467ca081eb12655dfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   instantiatePosition: {x: 11, y: 2, z: 0}
   pausePosition: {x: -4.5, y: 0, z: 0}
   distanceBetweenCustomers: 3
