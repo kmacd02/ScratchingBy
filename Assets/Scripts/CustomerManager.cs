@@ -16,6 +16,7 @@ public class CustomerManager : MonoBehaviour
     private int currentCustomersInQueue = 0;
     [SerializeField] private int numCustomersLeft = 10;
     private int successfulOrders = 0;
+    public Text scoreCounter = 0;
 
     [Header("Overflow Slider")]
     [SerializeField] private Slider overflow;
@@ -102,5 +103,11 @@ public class CustomerManager : MonoBehaviour
 
         // show current customers in queue on screen
         if(currentCustomersInQueue <= 5) overflow.value = currentCustomersInQueue;
+    }
+
+    // the most generic scoring system you've ever seen but done so horribly at like 1 am
+    void Score()
+    {
+        scoreCounter.text = (100 * successfulOrders).ToString();
     }
 }
