@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject panel;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] Settings settings;
 
     private GameObject[] spawners;
 
