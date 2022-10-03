@@ -13,6 +13,21 @@ public class DrinkContainer : MonoBehaviour
         return ingredients;
     }
 
+    [SerializeField] Sprite green;
+    [SerializeField] Sprite black;
+    [SerializeField] Sprite greenfruit;
+    [SerializeField] Sprite greenmilk;
+    [SerializeField] Sprite greenfruitboba;
+    [SerializeField] Sprite greenfruitjelly;
+    [SerializeField] Sprite greenmilkboba;
+    [SerializeField] Sprite greenmilkjelly;
+    [SerializeField] Sprite blackfruit;
+    [SerializeField] Sprite blackmilk;
+    [SerializeField] Sprite blackfruitboba;
+    [SerializeField] Sprite blackfruitjelly;
+    [SerializeField] Sprite blackmilkboba;
+    [SerializeField] Sprite blackmilkjelly;
+
     private Draggable draggable;
     private float timer = 5f;
 
@@ -54,7 +69,11 @@ public class DrinkContainer : MonoBehaviour
                 !ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.BlackTea,
                     DrinkIngredient.IngredientType.GreenTea))
             {
-                if(!ingredients.Contains(di.getType())) ingredients.Add(di.getType());
+                if(!ingredients.Contains(di.getType()))
+                {
+                    ingredients.Add(di.getType());
+                    changeSprite();
+                }
             }
             
             Destroy(col.gameObject);
@@ -76,7 +95,11 @@ public class DrinkContainer : MonoBehaviour
         {
             if (t == type)
             {
-                if(!ingredients.Contains(type)) ingredients.Add(type);
+                if(!ingredients.Contains(type))
+                {
+                    ingredients.Add(type);
+                    changeSprite();
+                }
             }else if (ingredients.Contains(t))
             {
                 ingredients.Remove(t);
@@ -84,5 +107,104 @@ public class DrinkContainer : MonoBehaviour
         }
 
         return true;
+    }
+
+    void changeSprite()
+    {
+        int count = ingredients.Count();
+        if (count == 0)
+            return;
+        if (ingredients[0] == DrinkIngredient.IngredientType.GreenTea)
+        {
+            if (count == 1)
+            {
+                this.GetComponent<SpriteRenderer>().sprite = green;
+            }
+            else
+            {
+                if (ingredients[1] == DrinkIngredient.IngredientType.Milk)
+                {
+                    if (count == 2)
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = greenmilk;
+                    }
+                    else
+                    {
+                        if (ingredients[2] == DrinkIngredient.IngredientType.Boba)
+                        {
+                            this.GetComponent<SpriteRenderer>().sprite = greenmilkboba;
+                        }
+                        else if (ingredients[2] == DrinkIngredient.IngredientType.Jelly)
+                        {
+                            this.GetComponent<SpriteRenderer>().sprite = greenmilkjelly;
+                        }
+                    }
+                }
+                else if (ingredients[1] == DrinkIngredient.IngredientType.Fruit)
+                {
+                    if (count == 2)
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = greenfruit;
+                    }
+                    else
+                    {
+                        if (ingredients[2] == DrinkIngredient.IngredientType.Boba)
+                        {
+                            this.GetComponent<SpriteRenderer>().sprite = greenfruitboba;
+                        }
+                        else if (ingredients[2] == DrinkIngredient.IngredientType.Jelly)
+                        {
+                            this.GetComponent<SpriteRenderer>().sprite = greenfruitjelly;
+                        }
+                    }
+                }
+            }
+        }
+        else if (ingredients[0] == DrinkIngredient.IngredientType.BlackTea)
+        {
+            if (count == 1)
+            {
+                this.GetComponent<SpriteRenderer>().sprite = black;
+            }
+            else
+            {
+                if (ingredients[1] == DrinkIngredient.IngredientType.Milk)
+                {
+                    if (count == 2)
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = blackmilk;
+                    }
+                    else
+                    {
+                        if (ingredients[2] == DrinkIngredient.IngredientType.Boba)
+                        {
+                            this.GetComponent<SpriteRenderer>().sprite = blackmilkboba;
+                        }
+                        else if (ingredients[2] == DrinkIngredient.IngredientType.Jelly)
+                        {
+                            this.GetComponent<SpriteRenderer>().sprite = blackmilkjelly;
+                        }
+                    }
+                }
+                else if (ingredients[1] == DrinkIngredient.IngredientType.Fruit)
+                {
+                    if (count == 2)
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = blackfruit;
+                    }
+                    else
+                    {
+                        if (ingredients[2] == DrinkIngredient.IngredientType.Boba)
+                        {
+                            this.GetComponent<SpriteRenderer>().sprite = blackfruitboba;
+                        }
+                        else if (ingredients[2] == DrinkIngredient.IngredientType.Jelly)
+                        {
+                            this.GetComponent<SpriteRenderer>().sprite = blackfruitjelly;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

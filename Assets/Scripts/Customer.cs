@@ -51,28 +51,9 @@ public class Customer : MonoBehaviour
         return true;
     }
 
-    public void getOrder()
+    public List<DrinkIngredient.IngredientType> getOrder()
     {
-        string result = "";
-
-        if (order[0] == DrinkIngredient.IngredientType.GreenTea)
-            result += "green tea +";
-        if (order[0] == DrinkIngredient.IngredientType.BlackTea)
-            result += "black tea +";
-        if (order[1] == DrinkIngredient.IngredientType.Milk)
-            result += "milk +";
-        if (order[1] == DrinkIngredient.IngredientType.Fruit)
-            result += "fruit +";
-        if (order[1] == DrinkIngredient.IngredientType.Plain)
-            result += "plain +";
-        if (order[2] == DrinkIngredient.IngredientType.Boba)
-            result += " boba";
-        if (order[2] == DrinkIngredient.IngredientType.Jelly)
-            result += " jelly";
-        if (order[2] == DrinkIngredient.IngredientType.NoTopping)
-            result += " no topping";
-
-        Debug.Log(result);
+        return order;
     }
     
     public void makeRandomOrder()
