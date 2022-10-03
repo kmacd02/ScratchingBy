@@ -13,6 +13,10 @@ TagManager:
   - Mix_Croissant
   - Mix_Roll
   - Highlight
+  - Taiyaki
+  - Roll
+  - Croissant
+  - Donut
   layers:
   - Default
   - TransparentFX

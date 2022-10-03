@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Donut
       objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281606, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_TagString
+      value: Donut
+      objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 10.24

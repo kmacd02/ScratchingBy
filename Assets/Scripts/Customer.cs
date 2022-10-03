@@ -38,7 +38,7 @@ public class Customer : MonoBehaviour
     private float speed = 0f;
     private bool orderComplete = false;
     [SerializeField] List<DrinkIngredient.IngredientType> order = new();
-    [SerializeField] GameObject orderFood = null;
+    [SerializeField] string orderFood = null;
     [SerializeField] Sprite[] allNormalSprites;
     [SerializeField] Sprite[] allSpecialSprites;
     [SerializeField] GameObject speechBubble;
@@ -58,9 +58,9 @@ public class Customer : MonoBehaviour
     
     public void makeRandomOrder()
     {
-        int type = Random.Range(0, 2);
+        // int type = Random.Range(0, 2);
 
-        if (type == 0)
+        if (true)
         {
             int r = Random.Range(0, 2);
             if (r == 0)
@@ -90,19 +90,19 @@ public class Customer : MonoBehaviour
 
             if (r == 0)
             {
-
+                orderFood = "taiyaki";
             }
             else if (r == 1)
             {
-
+                orderFood = "roll";
             }
             else if (r == 2)
             {
-
+                orderFood = "donut";
             }
             else
             {
-
+                orderFood = "croissant";
             }
         }
     }

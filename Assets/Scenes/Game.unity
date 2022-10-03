@@ -968,6 +968,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 898554758}
     m_Modifications:
+    - target: {fileID: 618593783, guid: 5a27f0ed5b5974084aa600c9ace4ff94, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6731070922752459806, guid: 5a27f0ed5b5974084aa600c9ace4ff94, type: 3}
       propertyPath: m_Name
       value: Midground
@@ -1816,6 +1820,7 @@ MonoBehaviour:
       m_Calls: []
   fade: {fileID: 936641912}
   text: {fileID: 918589174}
+  cursor: {fileID: 0}
 --- !u!4 &1569247213
 Transform:
   m_ObjectHideFlags: 0
