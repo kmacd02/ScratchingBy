@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Cup"
       objectReference: {fileID: 0}
+    - target: {fileID: 5456177747855068329, guid: 46870f61acba4499698ccd4de5f2fe2e, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46870f61acba4499698ccd4de5f2fe2e, type: 3}
 --- !u!4 &6731070921252659153 stripped
@@ -168,6 +172,10 @@ PrefabInstance:
     - target: {fileID: 4888432363486297276, guid: 80f5fb97541164d799ee2c8d591cd5cb, type: 3}
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Mix_Croissant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888432363486297276, guid: 80f5fb97541164d799ee2c8d591cd5cb, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 4888432363486297277, guid: 80f5fb97541164d799ee2c8d591cd5cb, type: 3}
       propertyPath: m_RootOrder
@@ -231,6 +239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Mix_Donut"
       objectReference: {fileID: 0}
+    - target: {fileID: 9146714488268766822, guid: 67102926c8e6d466e81bd93c99979b80, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 9146714488268766841, guid: 67102926c8e6d466e81bd93c99979b80, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -292,6 +304,10 @@ PrefabInstance:
     - target: {fileID: 8070937961539501482, guid: cadb96ed6a78b48c9aea2198b6c146eb, type: 3}
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Green"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070937961539501482, guid: cadb96ed6a78b48c9aea2198b6c146eb, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 8070937961539501485, guid: cadb96ed6a78b48c9aea2198b6c146eb, type: 3}
       propertyPath: m_RootOrder
@@ -399,6 +415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Boba"
       objectReference: {fileID: 0}
+    - target: {fileID: 7807626058908893525, guid: 859565479ad8247dcb46ddbd386b09e5, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 859565479ad8247dcb46ddbd386b09e5, type: 3}
 --- !u!4 &6731070922483193919 stripped
@@ -460,6 +480,10 @@ PrefabInstance:
     - target: {fileID: 7168858009985722463, guid: 9b2f4be18055847f79a2127f181583b8, type: 3}
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Milk"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168858009985722463, guid: 9b2f4be18055847f79a2127f181583b8, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b2f4be18055847f79a2127f181583b8, type: 3}
@@ -523,6 +547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Mix_Roll"
       objectReference: {fileID: 0}
+    - target: {fileID: 893445422964785625, guid: 36bcb57260cbd4e90852956474b229a0, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36bcb57260cbd4e90852956474b229a0, type: 3}
 --- !u!4 &6731070921899328307 stripped
@@ -540,6 +568,10 @@ PrefabInstance:
     - target: {fileID: 884863751534828296, guid: f83f8912eda97412d81cb6ec772f411c, type: 3}
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Jelly"
+      objectReference: {fileID: 0}
+    - target: {fileID: 884863751534828296, guid: f83f8912eda97412d81cb6ec772f411c, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 884863751534828297, guid: f83f8912eda97412d81cb6ec772f411c, type: 3}
       propertyPath: m_RootOrder
@@ -647,6 +679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Mix_Taiyaki"
       objectReference: {fileID: 0}
+    - target: {fileID: 4448953003044803560, guid: 173ca91c45fc7453e99fef6f67343475, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173ca91c45fc7453e99fef6f67343475, type: 3}
 --- !u!4 &6731070922452218042 stripped
@@ -709,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Black Tea"
       objectReference: {fileID: 0}
+    - target: {fileID: 4522341944393568581, guid: e73feed7f449c4adeb406f5800137600, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e73feed7f449c4adeb406f5800137600, type: 3}
 --- !u!4 &6731070922211748719 stripped
@@ -770,6 +810,10 @@ PrefabInstance:
     - target: {fileID: 3957784394263152121, guid: 424ba7c7f78fb4455971fa5fbea41dc9, type: 3}
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Fruit"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957784394263152121, guid: 424ba7c7f78fb4455971fa5fbea41dc9, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 424ba7c7f78fb4455971fa5fbea41dc9, type: 3}
