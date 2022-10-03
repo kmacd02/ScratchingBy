@@ -1,8 +1,11 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,12 +15,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image fade;
     [SerializeField] private TextMeshProUGUI text;
 
-    [SerializeField] private Texture2D cursor;
+    [SerializeField] private float fullGameTime = 600f; // 600 seconds for a full game
+
+    public static float score = 0; //score val
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(FullGame()); // full game time
     }
 
     // Update is called once per frame
@@ -80,5 +85,12 @@ public class GameManager : MonoBehaviour
     public bool HasSetting(string s)
     {
         return PlayerPrefs.HasKey(s);
+    }
+
+    private IEnumerator FullGame()
+    {
+        yield return new WaitForSeconds(fullGameTime); // full game
+
+        SceneManager.LoadScene("EndScreen");
     }
 }

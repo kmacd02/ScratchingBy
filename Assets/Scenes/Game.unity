@@ -1820,7 +1820,7 @@ MonoBehaviour:
       m_Calls: []
   fade: {fileID: 936641912}
   text: {fileID: 918589174}
-  cursor: {fileID: 0}
+  fullGameTime: 20
 --- !u!4 &1569247213
 Transform:
   m_ObjectHideFlags: 0
