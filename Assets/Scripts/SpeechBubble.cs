@@ -21,6 +21,12 @@ public class SpeechBubble : MonoBehaviour
     [SerializeField] Sprite blackmilkboba;
     [SerializeField] Sprite blackmilkjelly;
 
+    [Space] 
+    [SerializeField] private Sprite croissant;
+    [SerializeField] private Sprite donut;
+    [SerializeField] private Sprite roll;
+    [SerializeField] private Sprite taiyaki;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +41,35 @@ public class SpeechBubble : MonoBehaviour
 
     public void setSpeech()
     {
-        ingredients = gameObject.transform.parent.gameObject.GetComponent<Customer>().getOrder();
+        string food = gameObject.transform.parent.gameObject.GetComponent<Customer>().getOrderFood();
         GameObject order = gameObject.transform.GetChild(0).gameObject;
+
+        if (!string.IsNullOrEmpty(food))
+        {
+            switch (food)
+            {
+                case "taiyaki":
+                    order.GetComponent<SpriteRenderer>().sprite = taiyaki;
+                    break;
+                case "roll":
+                    order.GetComponent<SpriteRenderer>().sprite = roll;
+                    break;
+                case "donut":
+                    order.GetComponent<SpriteRenderer>().sprite = donut;
+                    break;
+                case "croissant":
+                    order.GetComponent<SpriteRenderer>().sprite = croissant;
+                    break;
+            }
+            return;
+        }
+        
+        ingredients = gameObject.transform.parent.gameObject.GetComponent<Customer>().getOrder();
 
         int count = ingredients.Count;
         if (count == 0)
             return;
-        if (ingredients[0] == DrinkIngredient.IngredientType.GreenTea)
+        if (ingredients.Contains(DrinkIngredient.IngredientType.GreenTea))
         {
             if (count == 1)
             {
@@ -49,7 +77,7 @@ public class SpeechBubble : MonoBehaviour
             }
             else
             {
-                if (ingredients[1] == DrinkIngredient.IngredientType.Milk)
+                if (ingredients.Contains(DrinkIngredient.IngredientType.Milk))
                 {
                     if (count == 2)
                     {
@@ -57,17 +85,17 @@ public class SpeechBubble : MonoBehaviour
                     }
                     else
                     {
-                        if (ingredients[2] == DrinkIngredient.IngredientType.Boba)
+                        if (ingredients.Contains(DrinkIngredient.IngredientType.Boba))
                         {
                             order.GetComponent<SpriteRenderer>().sprite = greenmilkboba;
                         }
-                        else if (ingredients[2] == DrinkIngredient.IngredientType.Jelly)
+                        else if (ingredients.Contains(DrinkIngredient.IngredientType.Jelly))
                         {
                             order.GetComponent<SpriteRenderer>().sprite = greenmilkjelly;
                         }
                     }
                 }
-                else if (ingredients[1] == DrinkIngredient.IngredientType.Fruit)
+                else if (ingredients.Contains(DrinkIngredient.IngredientType.Fruit))
                 {
                     if (count == 2)
                     {
@@ -75,11 +103,11 @@ public class SpeechBubble : MonoBehaviour
                     }
                     else
                     {
-                        if (ingredients[2] == DrinkIngredient.IngredientType.Boba)
+                        if (ingredients.Contains(DrinkIngredient.IngredientType.Boba))
                         {
                             order.GetComponent<SpriteRenderer>().sprite = greenfruitboba;
                         }
-                        else if (ingredients[2] == DrinkIngredient.IngredientType.Jelly)
+                        else if (ingredients.Contains(DrinkIngredient.IngredientType.Jelly))
                         {
                             order.GetComponent<SpriteRenderer>().sprite = greenfruitjelly;
                         }
@@ -87,7 +115,7 @@ public class SpeechBubble : MonoBehaviour
                 }
             }
         }
-        else if (ingredients[0] == DrinkIngredient.IngredientType.BlackTea)
+        else if (ingredients.Contains(DrinkIngredient.IngredientType.BlackTea))
         {
             if (count == 1)
             {
@@ -95,7 +123,7 @@ public class SpeechBubble : MonoBehaviour
             }
             else
             {
-                if (ingredients[1] == DrinkIngredient.IngredientType.Milk)
+                if (ingredients.Contains(DrinkIngredient.IngredientType.Milk))
                 {
                     if (count == 2)
                     {
@@ -103,17 +131,17 @@ public class SpeechBubble : MonoBehaviour
                     }
                     else
                     {
-                        if (ingredients[2] == DrinkIngredient.IngredientType.Boba)
+                        if (ingredients.Contains(DrinkIngredient.IngredientType.Boba))
                         {
                             order.GetComponent<SpriteRenderer>().sprite = blackmilkboba;
                         }
-                        else if (ingredients[2] == DrinkIngredient.IngredientType.Jelly)
+                        else if (ingredients.Contains(DrinkIngredient.IngredientType.Jelly))
                         {
                             order.GetComponent<SpriteRenderer>().sprite = blackmilkjelly;
                         }
                     }
                 }
-                else if (ingredients[1] == DrinkIngredient.IngredientType.Fruit)
+                else if (ingredients.Contains(DrinkIngredient.IngredientType.Fruit))
                 {
                     if (count == 2)
                     {
@@ -121,11 +149,11 @@ public class SpeechBubble : MonoBehaviour
                     }
                     else
                     {
-                        if (ingredients[2] == DrinkIngredient.IngredientType.Boba)
+                        if (ingredients.Contains(DrinkIngredient.IngredientType.Boba))
                         {
                             order.GetComponent<SpriteRenderer>().sprite = blackfruitboba;
                         }
-                        else if (ingredients[2] == DrinkIngredient.IngredientType.Jelly)
+                        else if (ingredients.Contains(DrinkIngredient.IngredientType.Jelly))
                         {
                             order.GetComponent<SpriteRenderer>().sprite = blackfruitjelly;
                         }

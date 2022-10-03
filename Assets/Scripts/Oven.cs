@@ -7,29 +7,23 @@ public class Oven : MonoBehaviour
     [SerializeField] int cooktime;
     [SerializeField] GameObject dot;
 
-    [SerializeField] GameObject roll;
-    [SerializeField] GameObject taiyaki;
-    [SerializeField] GameObject croissant;
-    [SerializeField] GameObject donut;
-
-    bool roll_exists = false;
-    bool donut_exists = false;
-    bool croissant_exists = false;
-    bool taiyaki_exists = false;
-
+    [SerializeField] IngredientSpawner roll;
+    [SerializeField] IngredientSpawner taiyaki;
+    [SerializeField] IngredientSpawner croissant;
+    [SerializeField] IngredientSpawner donut;
+    
     bool ovenActive = false;
 
     private void Update()
     {
-        //TODO: turn dot on/off:
-        //if oven active
-            //display that oven is active
-        //if oven inactive
-            //delete display
+        
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
+        Draggable d = collision.GetComponent<Draggable>();
+        if(d != null) if(d.dragging) return;
+        
         if (ovenActive)
             return;
 
@@ -56,95 +50,18 @@ public class Oven : MonoBehaviour
             Destroy(collision.gameObject);
             StartCoroutine(Waiting(croissant));
         }
-
-        switch (collision.gameObject.tag)
-        {
-            case "Mix_Roll":
-                if (roll_exists == false)
-                {
-                    Instantiate(roll);
-                    roll_exists = true;
-                }
-                break;
-            case "Mix_Taiyaki":
-                if (taiyaki_exists == false)
-                {
-                    Instantiate(taiyaki);
-                    taiyaki_exists = true;
-                }
-                break;
-            case "Mix_Donut":
-                if (donut_exists == false)
-                {
-                    Instantiate(donut);
-                    donut_exists = true;
-                }
-                break;
-            case "Mix_Croissant":
-                if (croissant_exists == false)
-                {
-                    Instantiate(croissant);
-                    croissant_exists = true;
-                }
-                break;
-            default:
-                break;
-        }
-
-        return;
-
     }
 
-    IEnumerator Waiting(GameObject pastry)
+    IEnumerator Waiting(IngredientSpawner pastry)
     {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //ovenActive = true;
-
-        //switch (pastry.gameObject.tag)
-        //{
-        //    case "Mix_Roll":
-        //        if (roll_exists == false)
-        //        {
-        //            Instantiate(roll);
-        //            roll_exists = true;
-        //        }
-        //        break;
-        //    case "Mix_Taiyaki":
-        //        if (taiyaki_exists == false)
-        //        {
-        //            Instantiate(taiyaki);
-        //            taiyaki_exists = true;
-        //        }
-        //        break;
-        //    case "Mix_Donut":
-        //        if (donut_exists == false)
-        //        {
-        //            Instantiate(donut);
-        //            donut_exists = true;
-        //        }
-        //        break;
-        //    case "Mix_Croissant":
-        //        if (croissant_exists == false)
-        //        {
-        //            Instantiate(croissant);
-        //            croissant_exists = true;
-        //        }
-        //        break;
-        //    default:
-        //        break;
-        //}
-
-        //ovenActive = false;
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
+        ovenActive = true;
+        dot.SetActive(true);
+        
         yield return new WaitForSeconds(cooktime);
 
-        //TODO: See if there is a way to accomplish the switch statement AFTER wait for seconds has been called
-        //Note: I tried instantiating the pastries after StartCoroutine in OnTriggerEnter2D but this is Not a solution
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        pastry.amount++;
+        
+        ovenActive = false;
+        dot.SetActive(false);
     }
 }

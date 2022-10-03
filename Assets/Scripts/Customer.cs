@@ -55,12 +55,17 @@ public class Customer : MonoBehaviour
     {
         return order;
     }
+
+    public string getOrderFood()
+    {
+        return orderFood;
+    }
     
     public void makeRandomOrder()
     {
-        // int type = Random.Range(0, 2);
-
-        if (true)
+        int type = GameManager.hasPastries ? Random.Range(0, 2) : 0;
+        
+        if (type == 0)
         {
             int r = Random.Range(0, 2);
             if (r == 0)
@@ -117,7 +122,7 @@ public class Customer : MonoBehaviour
         int count = this.order.Count;
         for (int i = 0; i < count; i++)
         {
-            if (this.order[i] != order[i])
+            if (!this.order.Contains(order[i]))
                 return false;
         }
 
@@ -143,11 +148,12 @@ public class Customer : MonoBehaviour
             timer = 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Drink Container")
+        DrinkContainer dc = collision.GetComponent<DrinkContainer>();
+        if (dc != null && !dc.gameObject.GetComponent<Draggable>().dragging)
         {
-            if (checkOrder(collision.gameObject.GetComponent<DrinkContainer>().getIngredients()))
+            if (checkOrder(dc.getIngredients()))
             {
                 orderComplete = true;
                 Destroy(collision.gameObject);
@@ -157,6 +163,15 @@ public class Customer : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 Debug.Log("wrong order");
+            }
+        }
+        else if (!string.IsNullOrEmpty(orderFood) && !collision.gameObject.GetComponent<Draggable>().dragging)
+        {
+            if (orderFood.Equals(collision.gameObject.tag.ToLower()))
+            {
+                orderComplete = true;
+                Destroy(collision.gameObject);
+                Debug.Log("order complete");
             }
         }
     }

@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281605, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.12
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281605, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.12
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281605, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -80,12 +80,28 @@ PrefabInstance:
       value: Donut
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Size.x
+      value: 4.266839
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7567892
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.22206306
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.059217215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 10.24
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 6.95
+      value: 3.475
       objectReference: {fileID: 0}
     - target: {fileID: 5673857235410869855, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: type
@@ -98,3 +114,29 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5673857235410869855, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+--- !u!1 &7370242638462171489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2738902232431281606, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+  m_PrefabInstance: {fileID: 4632750122007985319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &2381892576083823695
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370242638462171489}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

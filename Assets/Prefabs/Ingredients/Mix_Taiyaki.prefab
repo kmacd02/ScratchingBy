@@ -80,6 +80,22 @@ PrefabInstance:
       value: Mix_Taiyaki
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Size.x
+      value: 6.2982535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Size.y
+      value: 5.9436455
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00000071525574
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.052147746
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 6.36
       objectReference: {fileID: 0}

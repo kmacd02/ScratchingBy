@@ -8,8 +8,6 @@ using UnityEngine.UIElements;
 
 public class Draggable : MonoBehaviour
 {
-    private Inputs inputs;
-    
     private Vector3 offset;
     public bool isMouseOver = false;
     public bool dragging = false;
@@ -18,22 +16,7 @@ public class Draggable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    }
-
-    private void OnEnable()
-    {
-        inputs = new Inputs();
         
-        inputs.Player.ClickDown.Enable();
-        inputs.Player.ClickUp.Enable();
-        
-        // Debug.Log("test");
-    }
-
-    private void OnDisable()
-    {
-        inputs.Player.ClickDown.Disable();
-        inputs.Player.ClickUp.Disable();
     }
 
     // Update is called once per frame
@@ -45,15 +28,14 @@ public class Draggable : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
 
-        if (inputs.Player.ClickDown.triggered && isMouseOver)
+        if (GameManager.inputs.Player.ClickDown.triggered && isMouseOver)
         {
             clicked();
         }
-        // Debug.Log("test");
+        Debug.Log(GameManager.inputs.Player.ClickUp.triggered);
 
-        if (inputs.Player.ClickUp.triggered && isMouseOver)
+        if (GameManager.inputs.Player.ClickUp.triggered)
         {
-            // Debug.Log("test");
             dragging = false;
         }
     }

@@ -14,7 +14,7 @@ public class DrinkIngredient : MonoBehaviour
     [SerializeField] private IngredientType type;
 
     private Draggable draggable;
-    private float timer = 5f;
+    private float timer = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class DrinkIngredient : MonoBehaviour
     {
         if (draggable.dragging)
         {
-            timer = 5f;
+            timer = 0.1f;
         }
         else
         {

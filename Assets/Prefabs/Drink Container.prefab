@@ -81,19 +81,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_Size.x
-      value: 2.6583686
+      value: 3.3283978
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_Size.y
-      value: 2.5774732
+      value: 4.6985574
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_Offset.x
-      value: 0.020224094
+      value: -0.025048256
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_Offset.y
-      value: -0.54604816
+      value: -0.14679551
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_IsTrigger
@@ -105,11 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 23.603092
+      value: 3.69
       objectReference: {fileID: 0}
     - target: {fileID: 459731794271943707, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 16.4
+      value: 5.29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d54aaf0201fa9c4b8e1b6ca8435f26d, type: 3}
@@ -151,16 +151,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c451317474fb545b291ec56196f011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  green: {fileID: 21300000, guid: 623d8eadb402d584c841cec0ba6c2626, type: 3}
-  black: {fileID: 21300000, guid: 88cf0aa65649388409132690a57ccd7a, type: 3}
-  greenfruit: {fileID: 21300000, guid: ec256312433205c48bb8bdd385fc870e, type: 3}
-  greenmilk: {fileID: 21300000, guid: 8cb522c2291f9b745a62c1d1024335fb, type: 3}
-  greenfruitboba: {fileID: 21300000, guid: c885ffdcbefe6284f9023b39f6650a03, type: 3}
-  greenfruitjelly: {fileID: 21300000, guid: b3c7eb386bd3f69418ffd49c3e4803d4, type: 3}
-  greenmilkboba: {fileID: 21300000, guid: 5672111e33756f44fa2083f292262dac, type: 3}
-  greenmilkjelly: {fileID: 21300000, guid: f2694bfdc7b58824aa96e4afffdfa4fa, type: 3}
-  blackfruit: {fileID: 21300000, guid: e8522589c7ca09b42a1c945807f23348, type: 3}
-  blackmilk: {fileID: 21300000, guid: 57cfd1c6d623a9f46a1f4a9224464daa, type: 3}
+  green: {fileID: 21300000, guid: f1876a73d1c3e5d4c93cd532e8062c46, type: 3}
+  black: {fileID: 21300000, guid: c0f7c112cbd24c241ba7e419324f13da, type: 3}
+  greenfruit: {fileID: 21300000, guid: f84c8e200086c234c92406bf68af37eb, type: 3}
+  greenmilk: {fileID: 21300000, guid: c79f0e894853f4446a2c4b030c8ccb7d, type: 3}
+  greenfruitboba: {fileID: 21300000, guid: 0eb77a954f3e3804aac245c36e547db6, type: 3}
+  greenfruitjelly: {fileID: 21300000, guid: 75fcc45680f08214d8392f69c54a2ac5, type: 3}
+  greenmilkboba: {fileID: 21300000, guid: 1fa009df183e4cb4d9fff726c6281c82, type: 3}
+  greenmilkjelly: {fileID: 21300000, guid: 715badb9c382a094baba3e2f24050bcd, type: 3}
+  blackfruit: {fileID: 21300000, guid: 752ff1f46658bc849abc3ec2f8f95516, type: 3}
+  blackmilk: {fileID: 21300000, guid: 729c7a4f508e26842bd8fca3ede17c1d, type: 3}
   blackfruitboba: {fileID: 21300000, guid: 414ff8017cf18d243bb5f4efa3eccc96, type: 3}
   blackfruitjelly: {fileID: 21300000, guid: e136da9097ebafa45bcc4fb02b24b3c9, type: 3}
   blackmilkboba: {fileID: 21300000, guid: 7d3fb81edfc0a4a4197e68e15d678ca8, type: 3}

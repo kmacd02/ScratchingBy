@@ -21,8 +21,9 @@ public class Settings : MonoBehaviour
     void Start()
     {
         g = FindObjectOfType<GameManager>();
-        
-        masterVol.value = g.LoadSetting<float>(MASTER_VOL);
+
+        if (g.HasSetting(MASTER_VOL)) masterVol.value = g.LoadSetting<float>(MASTER_VOL);
+        else masterVol.value = 100;
         aux.SetFloat("MasterVolume", masterVol.value - volAdjust);
     }
 

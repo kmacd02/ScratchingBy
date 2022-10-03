@@ -13,11 +13,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
 
     [SerializeField] private Texture2D cursor;
+    
+    public static Inputs inputs;
+    public static bool hasPastries = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        inputs = new Inputs();
         
+        inputs.Player.ClickDown.Enable();
+        inputs.Player.ClickUp.Enable();
     }
 
     // Update is called once per frame
@@ -32,6 +38,12 @@ public class GameManager : MonoBehaviour
         }
 
         if(fade != null) fade.rectTransform.offsetMax = new Vector2(fade.rectTransform.offsetMax.x, -timer / 10 * 150);
+    }
+
+    private void OnDestroy()
+    {
+        inputs.Player.ClickDown.Disable();
+        inputs.Player.ClickUp.Disable();
     }
 
     public bool SaveSetting<T> (string s, T value)
