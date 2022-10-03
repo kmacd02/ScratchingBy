@@ -8,9 +8,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2738902232431281604, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Size.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281604, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_Size.y
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281604, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 76e12324508134d6795245d26d003166, type: 3}
+      objectReference: {fileID: 21300000, guid: 9c031c6f695f345a689e0fb5d3d0bd84, type: 3}
     - target: {fileID: 2738902232431281604, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -74,6 +82,14 @@ PrefabInstance:
     - target: {fileID: 2738902232431281606, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_Name
       value: Boba
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
