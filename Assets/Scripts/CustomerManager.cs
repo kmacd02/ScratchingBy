@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class CustomerManager : MonoBehaviour
     private int currentCustomersInQueue = 0;
     [SerializeField] private int numCustomersLeft = 10;
     private int successfulOrders = 0;
+    public TextMeshProUGUI scoreCounter;
 
     [Header("Overflow Slider")]
     [SerializeField] private Slider overflow;
@@ -23,6 +25,8 @@ public class CustomerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreCounter.text = "0";
+        
         GameObject newCustomer = Instantiate(customerPrefab, instantiatePosition, Quaternion.identity);
         newCustomer.GetComponent<Customer>().Init(speed);
         currentCustomers.Add(newCustomer);
@@ -102,5 +106,13 @@ public class CustomerManager : MonoBehaviour
 
         // show current customers in queue on screen
         if(currentCustomersInQueue <= 5) overflow.value = currentCustomersInQueue;
+
+        Score();
+    }
+
+    // the most generic scoring system you've ever seen but done so horribly at like 1 am
+    void Score()
+    {
+        scoreCounter.text = (100 * successfulOrders).ToString();
     }
 }

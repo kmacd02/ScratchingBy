@@ -8,6 +8,10 @@ TagManager:
   - Customer
   - Mid
   - Spawner
+  - Mix_Taiyaki
+  - Mix_Donut
+  - Mix_Croissant
+  - Mix_Roll
   layers:
   - Default
   - TransparentFX

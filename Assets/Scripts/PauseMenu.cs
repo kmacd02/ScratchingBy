@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         }
 
         settings.SwapMusic(0);
+        Debug.Log("pause");
     }
     public void resume()
     {

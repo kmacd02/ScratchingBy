@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2738902232431281604, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a73aaa0111a4bd4c8f9a8217ce831d6, type: 3}
+      objectReference: {fileID: 21300000, guid: 8b5d600f844e6914282a45f5606eeb21, type: 3}
     - target: {fileID: 2738902232431281604, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281605, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.12
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281605, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.12
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281605, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73,15 +73,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281606, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_Name
-      value: Donut
+      value: Mix_Taiyaki
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738902232431281606, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
+      propertyPath: m_TagString
+      value: Mix_Taiyaki
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 10.24
+      value: 6.36
       objectReference: {fileID: 0}
     - target: {fileID: 2738902232431281607, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 6.95
+      value: 5.88
       objectReference: {fileID: 0}
     - target: {fileID: 5673857235410869855, guid: 016b2bdabaed1ee4692ae1989e97970a, type: 3}
       propertyPath: type
