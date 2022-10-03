@@ -66,10 +66,7 @@ public class Customer : MonoBehaviour
     public void makeRandomOrder()
     {
         
-        // int type = GameManager.hasPastries ? Random.Range(0, 2) : 0;
-        // type = GameManager.hasCoffee ? Random.Range(0, 3) : Random.Range(0, 2);
-
-        int type = 2;
+        int type = GameManager.hasPastries ? (GameManager.hasCoffee ? Random.Range(0, 3) : Random.Range(0,2)) : 0;
         
         if (type == 0)
         {

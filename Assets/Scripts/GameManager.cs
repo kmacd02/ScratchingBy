@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Texture2D cursor;
     
     public static Inputs inputs;
-    public static bool hasPastries = true;
-    public static bool hasCoffee = true;
+    public static bool hasPastries = false;
+    public static bool hasCoffee = false;
 
     [SerializeField] private float fullGameTime = 600f; // 600 seconds for a full game
 
@@ -103,7 +103,11 @@ public class GameManager : MonoBehaviour
     
     private IEnumerator FullGame()
     {
-        yield return new WaitForSeconds(fullGameTime); // full game
+        yield return new WaitForSeconds(fullGameTime/3); // full game
+        hasPastries = true;
+        yield return new WaitForSeconds(fullGameTime/3); // full game
+        hasCoffee = true;
+        yield return new WaitForSeconds(fullGameTime/3); // full game
 
         SceneManager.LoadScene("EndScreen");
     }
