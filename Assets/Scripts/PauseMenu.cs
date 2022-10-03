@@ -35,6 +35,8 @@ public class PauseMenu : MonoBehaviour
         {
             spawner.SetActive(false);
         }
+
+        settings.SwapMusic(0);
     }
     public void resume()
     {
@@ -45,6 +47,8 @@ public class PauseMenu : MonoBehaviour
         {
             spawner.SetActive(true);
         }
+
+        settings.SwapMusic(1);
     }
 
     public void openPanel()
