@@ -113,6 +113,7 @@ public class CustomerManager : MonoBehaviour
     // the most generic scoring system you've ever seen but done so horribly at like 1 am
     void Score()
     {
-        scoreCounter.text = (100 * successfulOrders).ToString();
+        GameManager.score = 100 * successfulOrders; // store
+        scoreCounter.text = GameManager.score.ToString();
     }
 }
