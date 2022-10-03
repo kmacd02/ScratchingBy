@@ -1,0 +1,15 @@
+instructions:
+
+WORKSPACE_FINAL:
+    This is how the workspace should look when completely assembled
+
+stove_off and stove_on are the different stove variations. When assembling the workspace, please use the stove_off. 
+
+Files should be layered like this from back to front
+Workspace_BACK_FINAL: Background and counter
+    stove_off and stove_on go here
+Workspace_OBJ_FINAL: Objects on the counter that go over the customers
+    Customers should go here!
+Workspace_TOP_FINAL: Small items on the counter like the cups and boba/jellies/creamer/caramel 
+
+
