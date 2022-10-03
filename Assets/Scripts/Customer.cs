@@ -76,13 +76,13 @@ public class Customer : MonoBehaviour
             else
                 order.Add(DrinkIngredient.IngredientType.BlackTea);
 
-            r = Random.Range(0, 3);
+            r = Random.Range(0, 2);
             if (r == 0)
                 order.Add(DrinkIngredient.IngredientType.Milk);
             else if (r == 1)
                 order.Add(DrinkIngredient.IngredientType.Fruit);
 
-            r = Random.Range(0, 3);
+            r = Random.Range(0, 2);
             if (r == 0)
                 order.Add(DrinkIngredient.IngredientType.Boba);
             else if (r == 1)
