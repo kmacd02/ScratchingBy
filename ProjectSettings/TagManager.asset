@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Drink Container
   - Customer
+  - Mid
+  - Spawner
   layers:
   - Default
   - TransparentFX
