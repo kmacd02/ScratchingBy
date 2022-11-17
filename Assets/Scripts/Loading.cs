@@ -40,7 +40,7 @@ public class Loading : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        // Application.Quit();
     }
 
     IEnumerator LoadYourAsyncScene(string s)

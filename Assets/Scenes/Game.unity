@@ -1699,7 +1699,7 @@ PrefabInstance:
     - target: {fileID: 884863751534828295, guid: f83f8912eda97412d81cb6ec772f411c, type: 3}
       propertyPath: ingredient
       value: 
-      objectReference: {fileID: 2504961671702910769, guid: 1b1af2bed7e3f27458a28594e29079a9, type: 3}
+      objectReference: {fileID: 2504961671702910769, guid: 3ac9e477572bc3749b87a56cb16d6a15, type: 3}
     - target: {fileID: 884863751534828296, guid: f83f8912eda97412d81cb6ec772f411c, type: 3}
       propertyPath: m_Name
       value: "Ingredient Spawner \u2014 Ice"

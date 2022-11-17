@@ -86,7 +86,7 @@ public class CustomerManager : MonoBehaviour
             currentCustomers.First().transform.position.x > pausePosition.x;
         }
 
-        if (overflow.value >= 5)
+        if (overflow.value >= 4)
         {
             SceneManager.LoadScene("DeathScreen");
         }
