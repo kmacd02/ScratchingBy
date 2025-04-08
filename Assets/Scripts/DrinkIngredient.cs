@@ -6,15 +6,13 @@ using UnityEngine;
 
 public class DrinkIngredient : MonoBehaviour
 {
-    public enum IngredientType
-    {
-        GreenTea, BlackTea, Milk, Fruit, Plain, Boba, Jelly, NoTopping
-    }
-
-    [SerializeField] private IngredientType type;
+    public string name;
+    public string category;
 
     private Draggable draggable;
     private float timer = 0.1f;
+    
+    public bool used = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +38,13 @@ public class DrinkIngredient : MonoBehaviour
         }
     }
 
-    public IngredientType getType()
+    public string getName()
     {
-        return type;
+        return name;
+    }
+
+    public string getCategory()
+    {
+        return category;
     }
 }

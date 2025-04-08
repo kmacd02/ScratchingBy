@@ -17,19 +17,19 @@ public class Customer : MonoBehaviour
         speechBubble.GetComponent<SpeechBubble>().setSpeech();
     }
 
-    public void Init(List<DrinkIngredient.IngredientType> special, float speed, int appearance)
-    {
-        order = special;
-        this.speed = speed;
-
-        if (appearance > 6 || appearance < 0)
-        {
-            Debug.Log("Appearance: index out of range");
-            return;
-        }
-
-        this.GetComponent<SpriteRenderer>().sprite = allSpecialSprites[appearance];
-    }
+    // public void Init(List<DrinkIngredient.IngredientType> special, float speed, int appearance)
+    // {
+    //     order = special;
+    //     this.speed = speed;
+    //
+    //     if (appearance > 6 || appearance < 0)
+    //     {
+    //         Debug.Log("Appearance: index out of range");
+    //         return;
+    //     }
+    //
+    //     this.GetComponent<SpriteRenderer>().sprite = allSpecialSprites[appearance];
+    // }
     
     [NonSerialized] public bool moving = false;
 
@@ -37,7 +37,7 @@ public class Customer : MonoBehaviour
     private float timer = 20f;
     private float speed = 0f;
     private bool orderComplete = false;
-    [SerializeField] List<DrinkIngredient.IngredientType> order = new();
+    Dictionary<String, String> order = new();
     [SerializeField] public List<CoffeeIngredient.IngredientType> coffeeOrder = new();
     [SerializeField] string orderFood = null;
     [SerializeField] Sprite[] allNormalSprites;
@@ -53,7 +53,7 @@ public class Customer : MonoBehaviour
         return true;
     }
 
-    public List<DrinkIngredient.IngredientType> getOrder()
+    public Dictionary<String, String> getOrder()
     {
         return order;
     }
@@ -72,21 +72,21 @@ public class Customer : MonoBehaviour
         {
             int r = Random.Range(0, 2);
             if (r == 0)
-                order.Add(DrinkIngredient.IngredientType.GreenTea);
+                order.TryAdd("Base", "GreenTea");
             else
-                order.Add(DrinkIngredient.IngredientType.BlackTea);
+                order.TryAdd("Base", "BlackTea");
 
             r = Random.Range(0, 2);
             if (r == 0)
-                order.Add(DrinkIngredient.IngredientType.Milk);
+                order.TryAdd("Mix", "Milk");
             else if (r == 1)
-                order.Add(DrinkIngredient.IngredientType.Fruit);
+                order.TryAdd("Mix", "Fruit");
 
             r = Random.Range(0, 2);
             if (r == 0)
-                order.Add(DrinkIngredient.IngredientType.Boba);
+                order.TryAdd("Additives", "Boba");
             else if (r == 1)
-                order.Add(DrinkIngredient.IngredientType.Jelly);
+                order.TryAdd("Additives", "Jelly");
         }
         else if(type == 1)
         {
@@ -131,7 +131,7 @@ public class Customer : MonoBehaviour
         }
     }
 
-    public bool checkOrder(List<DrinkIngredient.IngredientType> order)
+    public bool checkOrder(Dictionary<String, String> order)
     {
         if (this.order.Count != order.Count)
         {
@@ -139,10 +139,12 @@ public class Customer : MonoBehaviour
         }
 
         int count = this.order.Count;
-        for (int i = 0; i < count; i++)
+        foreach (KeyValuePair<String, String> pair in order)
         {
-            if (!this.order.Contains(order[i]))
+            if (this.order[pair.Key] != pair.Value)
+            {
                 return false;
+            }
         }
 
         return true;

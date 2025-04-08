@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class DrinkContainer : MonoBehaviour
 {
-    private List<DrinkIngredient.IngredientType> ingredients = new();
+    private Dictionary<String, String> ingredients = new();
 
-    public List<DrinkIngredient.IngredientType> getIngredients()
+    public Dictionary<String, String> getIngredients()
     {
         return ingredients;
     }
@@ -58,50 +58,36 @@ public class DrinkContainer : MonoBehaviour
     private void OnCollisionStay2D(Collision2D col)
     {
         DrinkIngredient di = col.gameObject.GetComponent<DrinkIngredient>();
-        if (di != null && !di.gameObject.GetComponent<Draggable>().dragging)
+        if (di != null && !di.gameObject.GetComponent<Draggable>().dragging && !di.used)
         {
-            if (!ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.Boba,
-                    DrinkIngredient.IngredientType.Jelly) &&
-                !ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.Fruit,
-                    DrinkIngredient.IngredientType.Milk) &&
-                !ingredientSwitch(di.getType(), DrinkIngredient.IngredientType.BlackTea,
-                    DrinkIngredient.IngredientType.GreenTea))
+            if (ApplyIngredient(di))
             {
-                if(!ingredients.Contains(di.getType()) && ingredients.Count < 3)
+                if (di.used)
                 {
-                    ingredients.Add(di.getType());
+                    Destroy(col.gameObject);
                     changeSprite();
                 }
-            }
-            
-            Destroy(col.gameObject);
-            Debug.Log(ingredients.Count);
-            foreach (var type in ingredients)
-            {
-                Debug.Log(type.ToString());
+                
+                Debug.Log(ingredients.Count);
+                foreach (var type in ingredients)
+                {
+                    Debug.Log(type.ToString());
+                }
             }
         }
     }
 
-    bool ingredientSwitch(DrinkIngredient.IngredientType type, params DrinkIngredient.IngredientType[] ingredientTypes)
+    bool ApplyIngredient(DrinkIngredient di)
     {
-        if (!ingredientTypes.Contains(type))
+        if (ingredients.ContainsKey(di.getCategory()) && ingredients[di.getCategory()] != di.getName())
         {
-            return false;
+            ingredients[di.getCategory()] = di.getName();
+            di.used = true;
         }
-        foreach (var t in ingredientTypes)
+        else
         {
-            if (t == type)
-            {
-                if(!ingredients.Contains(type) && ingredients.Count < 3)
-                {
-                    ingredients.Add(type);
-                    changeSprite();
-                }
-            }else if (ingredients.Contains(t))
-            {
-                ingredients.Remove(t);
-            }
+            ingredients.Add(di.getCategory(), di.getName());
+            di.used = true;
         }
 
         return true;
@@ -109,10 +95,19 @@ public class DrinkContainer : MonoBehaviour
 
     void changeSprite()
     {
-        int count = ingredients.Count();
+        string dBase;
+        if (!ingredients.TryGetValue("Base", out dBase)) dBase = "None";
+        
+        string dMix;
+        if (!ingredients.TryGetValue("Mix", out dMix)) dMix = "None";
+        
+        string dAdditives;
+        if (!ingredients.TryGetValue("Additives", out dAdditives)) dAdditives = "None";
+        
+        int count = ingredients.Count;
         if (count == 0)
             return;
-        if (ingredients.Contains(DrinkIngredient.IngredientType.GreenTea))
+        if (dBase == "GreenTea")
         {
             if (count == 1)
             {
@@ -120,7 +115,7 @@ public class DrinkContainer : MonoBehaviour
             }
             else
             {
-                if (ingredients.Contains(DrinkIngredient.IngredientType.Milk))
+                if (dMix == "Milk")
                 {
                     if (count == 2)
                     {
@@ -128,17 +123,17 @@ public class DrinkContainer : MonoBehaviour
                     }
                     else
                     {
-                        if (ingredients.Contains(DrinkIngredient.IngredientType.Boba))
+                        if (dAdditives == "Boba")
                         {
                             this.GetComponent<SpriteRenderer>().sprite = greenmilkboba;
                         }
-                        else if (ingredients.Contains(DrinkIngredient.IngredientType.Jelly))
+                        else if (dAdditives == "Jelly")
                         {
                             this.GetComponent<SpriteRenderer>().sprite = greenmilkjelly;
                         }
                     }
                 }
-                else if (ingredients.Contains(DrinkIngredient.IngredientType.Fruit))
+                else if (dMix == "Fruit")
                 {
                     if (count == 2)
                     {
@@ -146,11 +141,11 @@ public class DrinkContainer : MonoBehaviour
                     }
                     else
                     {
-                        if (ingredients.Contains(DrinkIngredient.IngredientType.Boba))
+                        if (dAdditives == "Boba")
                         {
                             this.GetComponent<SpriteRenderer>().sprite = greenfruitboba;
                         }
-                        else if (ingredients.Contains(DrinkIngredient.IngredientType.Jelly))
+                        else if (dAdditives == "Jelly")
                         {
                             this.GetComponent<SpriteRenderer>().sprite = greenfruitjelly;
                         }
@@ -158,7 +153,7 @@ public class DrinkContainer : MonoBehaviour
                 }
             }
         }
-        else if (ingredients.Contains(DrinkIngredient.IngredientType.BlackTea))
+        else if (dBase == "BlackTea")
         {
             if (count == 1)
             {
@@ -166,7 +161,7 @@ public class DrinkContainer : MonoBehaviour
             }
             else
             {
-                if (ingredients.Contains(DrinkIngredient.IngredientType.Milk))
+                if (dMix == "Milk")
                 {
                     if (count == 2)
                     {
@@ -174,17 +169,17 @@ public class DrinkContainer : MonoBehaviour
                     }
                     else
                     {
-                        if (ingredients.Contains(DrinkIngredient.IngredientType.Boba))
+                        if (dAdditives == "Boba")
                         {
                             this.GetComponent<SpriteRenderer>().sprite = blackmilkboba;
                         }
-                        else if (ingredients.Contains(DrinkIngredient.IngredientType.Jelly))
+                        else if (dAdditives == "Jelly")
                         {
                             this.GetComponent<SpriteRenderer>().sprite = blackmilkjelly;
                         }
                     }
                 }
-                else if (ingredients.Contains(DrinkIngredient.IngredientType.Fruit))
+                else if (dMix == "Fruit")
                 {
                     if (count == 2)
                     {
@@ -192,11 +187,11 @@ public class DrinkContainer : MonoBehaviour
                     }
                     else
                     {
-                        if (ingredients.Contains(DrinkIngredient.IngredientType.Boba))
+                        if (dAdditives == "Boba")
                         {
                             this.GetComponent<SpriteRenderer>().sprite = blackfruitboba;
                         }
-                        else if (ingredients.Contains(DrinkIngredient.IngredientType.Jelly))
+                        else if (dAdditives == "Jelly")
                         {
                             this.GetComponent<SpriteRenderer>().sprite = blackfruitjelly;
                         }
