@@ -44,6 +44,8 @@ public class Customer : MonoBehaviour
     [SerializeField] Sprite[] allSpecialSprites;
     [SerializeField] GameObject speechBubble;
     [SerializeField] private GameObject angy;
+
+    private int type;
  
     // get functions
     public bool isTimerUp()
@@ -66,7 +68,7 @@ public class Customer : MonoBehaviour
     public void makeRandomOrder()
     {
         
-        int type = GameManager.hasPastries ? (GameManager.hasCoffee ? Random.Range(0, 3) : Random.Range(0,2)) : 0;
+        type = GameManager.hasPastries ? (GameManager.hasCoffee ? Random.Range(0, 3) : Random.Range(0,2)) : 0;
         
         if (type == 0)
         {
@@ -195,7 +197,7 @@ public class Customer : MonoBehaviour
         CoffeeContainer cc = collision.GetComponent<CoffeeContainer>();
         if (cc != null && !cc.gameObject.GetComponent<Draggable>().dragging)
         {
-            if (checkOrder(cc.getIngredients()))
+            if (type == 2 && checkOrder(cc.getIngredients()))
             {
                 orderComplete = true;
                 Destroy(collision.gameObject);
@@ -210,7 +212,7 @@ public class Customer : MonoBehaviour
             }
         }else if (dc != null && !dc.gameObject.GetComponent<Draggable>().dragging)
         {
-            if (checkOrder(dc.getIngredients()))
+            if (type == 0 && checkOrder(dc.getIngredients()))
             {
                 orderComplete = true;
                 Destroy(collision.gameObject);
